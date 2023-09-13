@@ -13,6 +13,7 @@ includes the fetch requests from the React components in the front end
 
 ### React components_
 *Should not have direct access to the Database elecements for security*
+
 Includes the different components of the front end to render the data fetched in the app
 - examples include ```inventoryList.tsx``` and ```userList.tsx``` 
 
