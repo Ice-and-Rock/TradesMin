@@ -17,12 +17,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.homePage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: cadetblue;
-}
+
 .homePageMenu {
   display:flex;
   flex-direction: column;
