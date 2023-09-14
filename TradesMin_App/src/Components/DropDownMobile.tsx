@@ -57,7 +57,7 @@ export default function DropDownMobile() {
                
                 </div>
                 <div>
-                  <a href="/arrays" className="font-semibold text-gray-900">
+                  <a href="/notfound" className="font-semibold text-gray-900">
                     Daily job List
                     <span className="absolute inset-0"></span>
                   </a>
@@ -84,7 +84,7 @@ export default function DropDownMobile() {
                   </svg>
                 </div>
                 <div>
-                  <a href="/functions" className="font-semibold text-gray-900">
+                  <a href="/projectpage" className="font-semibold text-gray-900">
                     Projects
                     <span className="absolute inset-0"></span>
                   </a>
