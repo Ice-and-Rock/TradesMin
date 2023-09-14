@@ -2,7 +2,7 @@
 
 export const Footer = () => {
     return ( 
-      <footer className="felx bg-gradient-to-b from-gray-600 to-gray-800 text-center text-white">
+      <footer className="felx bg-gradient-to-b from-blue-200 to-blue-800 text-center text-white">
       <div className="p-3 sm:p-9 justify-center">
         <div className="flex justify-center">
           <a
@@ -85,7 +85,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-br from-gray-800 via-gray-800 to-pink-900 text-xs p-2 sm:p-4 text-center text-gray-500 ">
+      <div className="bg-gradient-to-br from-blue-400 via-blue-400 to-gray-400 text-xs p-2 sm:p-4 text-center text-gray-900 ">
         © 2023. Nick Valente
       </div>
     </footer>
