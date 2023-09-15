@@ -21,8 +21,8 @@ const ProjectsPage: React.FC = () => {
       <ul>
         {projects.map((project: Project, index: number) => (
           <li key={index} className="mb-4">
-            <Link to={`/projects/${index + 1}`}>{project.ProjectName}</Link>
-            
+            <Link to={`/projects/${project.ProjectName}`}>{project.ProjectName}</Link>
+
             {/* Get rid of the code below - CHEKCING DATA RENDERS */}
             <ul>
               {project.products.map((product, productIndex) => (
