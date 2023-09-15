@@ -8,7 +8,7 @@ import ProjectDetails from "./Components/ProjectDetails";
 import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
-import projects from "./Data/DummyData";
+// import projects from "./Data/DummyData";
 
 const App: React.FC = () => {
   return (
@@ -20,8 +20,8 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/projectpage" element={<ProjectsPage />} />
             <Route
-              path="/projects/:projectId"
-              element={<ProjectDetails projects={projects} />}
+              path="/projects/:projectName"
+              element={<ProjectDetails />}
             />
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/about" element={<About />} />

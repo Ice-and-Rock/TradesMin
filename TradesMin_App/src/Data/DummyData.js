@@ -1,4 +1,4 @@
-const projects = [
+const projectsData = [
     {
       ProjectName: "Grand Chalet",
       products: [
@@ -127,5 +127,5 @@ const projects = [
     // You can add more project entries here
   ];
   
-  export default projects;
+  export default projectsData;
   

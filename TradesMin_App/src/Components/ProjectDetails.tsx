@@ -1,9 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
-type ProjectDetailsProps = {
-  projects: Project[];
-};
 
 type Project = {
   ProjectName: string;
@@ -15,21 +11,27 @@ type Product = {
   quantity: number;
 };
 
-const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projects }) => {
-  const { projectId } = useParams<{ projectId: string }>();
-  const project = projects[parseInt(projectId || "1") - 1];
+const ProjectDetails: React.FC <{ project: Project }> = ({ project }) => {
+
+  if (!project) {
+    // Error, if I haven't done it properly 
+    return <div>Project not found</div>;
+  }
 
   return (
     <div className="bg-white p-4 rounded-md shadow-md">
       <h2>Project Details</h2>
+      <h3>Project Name: {project.ProjectName}</h3>
+      <h3>Products: 
+        <ul>
+          {project.products.map((product, productIndex) => (
+            <li key={productIndex}>
+              {product.product}: {product.quantity}
+            </li>
+          ))}
+        </ul>
+      </h3>
       
-      
-      {project && (
-        <>
-          <h3>Project Name: {project.ProjectName}</h3>
-          {/* Display other project details here */}
-        </>
-      )}
     </div>
   );
 };
