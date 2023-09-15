@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Components/Home";
 import { Footer } from "./Components/Footer";
 import ProjectsPage from "./Components/ProjectsPage";
-import ProjectDetails from "./Components/ProjectDetails";
 import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
@@ -19,10 +18,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projectpage" element={<ProjectsPage />} />
-            <Route
-              path="/projects/:projectName"
-              element={<ProjectDetails />}
-            />
+           
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/about" element={<About />} />
           </Routes>

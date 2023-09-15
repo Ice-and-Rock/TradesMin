@@ -19,20 +19,32 @@ const ProjectDetails: React.FC <{ project: Project }> = ({ project }) => {
   }
 
   return (
-    <div className="bg-white p-4 rounded-md shadow-md">
-      <h2>Project Details</h2>
-      <h3>Project Name: {project.ProjectName}</h3>
-      <h3>Products: 
+    <div className="bg-white p-4 rounded-xl shadow-md">
+    <h2 className="text-2xl font-semibold">{project.ProjectName}</h2>
+    <h3 className="text-l font-semibold">"Project address - here"</h3>
+    <div className="grid grid-cols-2 gap-4 mt-4">
+      <div>
+        <h4 className="text-lg font-semibold">Products</h4>
         <ul>
           {project.products.map((product, productIndex) => (
-            <li key={productIndex}>
-              {product.product}: {product.quantity}
+            <li key={productIndex} className="mb-2">
+              {product.product}
             </li>
           ))}
         </ul>
-      </h3>
-      
+      </div>
+      <div>
+        <h4 className="flex align-center justify-center text-lg font-semibold">Quantity</h4>
+        <ul>
+          {project.products.map((product, productIndex) => (
+            <li key={productIndex} className="flex align-center justify-center mb-2">
+              {product.quantity}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
+  </div>
   );
 };
 
