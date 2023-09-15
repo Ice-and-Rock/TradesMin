@@ -7,10 +7,10 @@ type Project = {
   products: Product[];
 };
 
-// type Product = {
-//   product: string;
-//   quantity: number;
-// };
+type Product = {
+  product: string;
+  quantity: number;
+};
 
 // Import data from an exernal database
   // Use useEffect to retrieve the data from an external database
