@@ -124,7 +124,31 @@ const projectsData = [
         },
       ],
     },
-    // You can add more project entries here
+    {
+      ProjectName: "My house",
+      products: [
+        {
+          product: "single socket",
+          quantity: 24,
+        },
+        {
+          product: "double socket",
+          quantity: 4,
+        },
+        {
+          product: "single switch",
+          quantity: 17,
+        },
+        {
+          product: "double switch",
+          quantity: 9,
+        },
+        {
+          product: "flex outlet",
+          quantity: 4,
+        },
+      ],
+    },
   ];
   
   export default projectsData;
