@@ -56,7 +56,8 @@ export default function DropDownMobile() {
                   {/*  */}
                
                 </div>
-                <div>
+                {/* REmoved for INITAL PHASE */}
+                {/* <div>
                   <a href="/notfound" className="font-semibold text-gray-900">
                     Daily job List
                     <span className="absolute inset-0"></span>
@@ -82,7 +83,7 @@ export default function DropDownMobile() {
                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
                    />
                   </svg>
-                </div>
+                </div> */}
                 <div>
                   <a href="/projectpage" className="font-semibold text-gray-900">
                     Projects
@@ -93,7 +94,10 @@ export default function DropDownMobile() {
                   </p>
                 </div>
               </div>
-              <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+
+              {/* Commented out from here */}
+
+              {/* <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
                 <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                   <svg
                     className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -150,7 +154,10 @@ export default function DropDownMobile() {
                     Current pricing for materials used
                   </p>
                 </div>
-              </div>
+              </div> */}
+
+                {/* TO HERE */}
+                
             </div>
             <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
               <a
