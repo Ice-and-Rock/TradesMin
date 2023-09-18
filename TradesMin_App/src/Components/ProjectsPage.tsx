@@ -42,7 +42,7 @@ const ProjectsPage: React.FC = () => {
         <ProjectDetails project={selectedProjectData} />
       ) : (
         <ul>
-      <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-blue-40">
+      <a href="/newproject" className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-blue-40 ">
         <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
           <svg
             className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -58,15 +58,15 @@ const ProjectsPage: React.FC = () => {
               d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          {/*  */}
+          
         </div>
         <div className="flex items-center">
-          <a href="/projectpage" className="font-semibold text-gray-900">
-            Add Project
+          <a className="font-semibold text-gray-900">
+            New Project
            
           </a>
         </div>
-      </div>
+      </a>
           {projectsData.map((project: Project) => (
             <li
               key={project.ProjectName}

@@ -7,6 +7,7 @@ import ProjectsPage from "./Components/ProjectsPage";
 import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
+import NewProjectForm from "./Components/NewProjectForm"
 // import projects from "./Data/DummyData";
 
 const App: React.FC = () => {
@@ -18,6 +19,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projectpage" element={<ProjectsPage />} />
+            <Route path="/newproject" element={<NewProjectForm />} />
            
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/about" element={<About />} />
