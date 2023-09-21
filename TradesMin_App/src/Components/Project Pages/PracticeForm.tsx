@@ -30,11 +30,14 @@ const ProjectForm: React.FC = () => {
   
       // Reset the form fields
       setFormData({
-        projectName: "",
-        materials: "",
+        projectName: "reset",
+        materials: "reset",
         cost: 0,
     });
-    console.log("submitted!" + formData)
+    console.log("submitted!" + " " + formData.materials)
+    console.log("form data " + formData)
+    console.log(practiceProjectData)
+    console.log(practiceProjectDataList)
   
       // You can save the data to localStorage or send it to a server here as well.
     };
@@ -48,6 +51,7 @@ const ProjectForm: React.FC = () => {
             type="text"
             id="projectName"
             name="projectName"
+            className="text-white"
             value={formData.projectName}
             onChange={handleInputChange}
             required
@@ -59,6 +63,7 @@ const ProjectForm: React.FC = () => {
             type="text"
             id="materials"
             name="materials"
+            className="text-white"
             value={formData.materials}
             onChange={handleInputChange}
             required
@@ -70,6 +75,7 @@ const ProjectForm: React.FC = () => {
             type="number"
             id="cost"
             name="cost"
+            className="text-white"
             value={formData.cost}
             onChange={handleInputChange}
             required
