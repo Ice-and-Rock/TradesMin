@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import projectsData from "../Data/DummyData";
+import projectsData from "../../Data/DummyData";
 import ProjectDetails from "./ProjectDetails";
 
 // TYPES
@@ -33,40 +33,38 @@ const ProjectsPage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-blue-100 text-gray-800">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-200 to-blue-400 text-gray-800">
       <h1 className="text-2xl font-bold mb-4">Projects Page</h1>
-
 
       {/* Project List */}
       {selectedProjectData ? (
         <ProjectDetails project={selectedProjectData} />
       ) : (
         <ul>
-      <a href="/newproject" className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-blue-40 ">
-        <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
-          <svg
-            className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            aria-hidden="true"
+          <a
+            href="/newproject"
+            className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-blue-40 "
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-          
-        </div>
-        <div className="flex items-center">
-          <a className="font-semibold text-gray-900">
-            New Project
-           
+            <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-100 group-hover:bg-white">
+              <svg
+                className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <div className="flex items-center">
+              <a className="font-semibold text-gray-900">New Project</a>
+            </div>
           </a>
-        </div>
-      </a>
           {projectsData.map((project: Project) => (
             <li
               key={project.ProjectName}

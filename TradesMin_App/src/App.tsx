@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Home } from "./Components/Home";
 import { Footer } from "./Components/Footer";
-import ProjectsPage from "./Components/ProjectsPage";
+import ProjectsPage from "./Components/Project Pages/ProjectsPage";
 import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
-import NewProjectForm from "./Components/NewProjectForm"
+import AddProjectHandler from "./Components/Project Pages/AddProjectHandler";
 // import projects from "./Data/DummyData";
 
 const App: React.FC = () => {
@@ -19,8 +19,8 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projectpage" element={<ProjectsPage />} />
-            <Route path="/newproject" element={<NewProjectForm />} />
-           
+            <Route path="/newproject" element={<AddProjectHandler />} />
+
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/about" element={<About />} />
           </Routes>
