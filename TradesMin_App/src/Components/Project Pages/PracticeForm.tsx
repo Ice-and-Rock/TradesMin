@@ -3,43 +3,51 @@ import React, { useState } from "react";
 import practiceProjectData from "../../Data/PracticeData.js"; 
 
 interface Project {
-  projectName: string;
-  materials: string;
-  cost: number;
+    projectName: string;
+    materials: string;
+    cost: number;
 }
 
 const ProjectForm: React.FC = () => {
+    // Set up the empty form data
     const [formData, setFormData] = useState<Project>({
-      projectName: "",
-      materials: "",
-      cost: 0,
-    });
-  
-    const [practiceProjectDataList, setPracticeProjectDataList] = useState<Project[]>([]);
-  
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target;
-      setFormData({ ...formData, [name]: value });
-    };
-  
-    const handleSubmit = (event: React.FormEvent) => {
-      event.preventDefault();
-      
-      // Add the new project data to the projectsData array
-      setPracticeProjectDataList([...practiceProjectDataList, formData]);
-  
-      // Reset the form fields
-      setFormData({
-        projectName: "reset",
-        materials: "reset",
+        projectName: "",
+        materials: "",
         cost: 0,
     });
-    console.log("submitted!" + " " + formData.materials)
-    console.log("form data " + formData)
-    console.log(practiceProjectData)
-    console.log(practiceProjectDataList)
+    
+    // Set up the practice data list ot be updated
+    const [practiceProjectDataList, setPracticeProjectDataList] = useState<Project[]>(practiceProjectData);
+    
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+    };
+    
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        
+        // create an object for the new data 
+        const newProject: Project = {
+            projectName: formData.projectName,
+            materials: formData.materials,
+            cost: formData.cost
+        }
+        
+        // Add the new project data to the projectsData array
+        setPracticeProjectDataList([...practiceProjectDataList, newProject]);
+        
+        // Reset the form fields
+        setFormData({
+            projectName: "reset",
+            materials: "reset",
+            cost: 0,
+        });
+        console.log("submitted!" + " " + formData.materials)
+        console.log("form data " + formData)
+        console.log(practiceProjectData)
+        console.log(practiceProjectDataList)
   
-      // You can save the data to localStorage or send it to a server here as well.
     };
   return (
     <div>
