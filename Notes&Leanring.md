@@ -20,19 +20,22 @@ Forgot to import the CSS Tailwind styles into the ```main.tsx``` ...again. No wo
 ### CHANGE OF PLAN
 ## Store the data in a .json file rather than a .js file => Local NPX JSON-server
 # Components:
-ProjectsPage - useFetch - ProjectList - ProjectDetails(Edit/Delete)
-ProjectsPage - CreateProject 
+    ProjectsPage - useFetch - ProjectList - ProjectDetails(Edit/Delete)
+    ProjectsPage - CreateProject 
 # Write a ProjectsPage component
-call useFetch
-render ProjectList
+    call useFetch
+    render ProjectList
+    render NewProject
 # Write a useFetch component to retreive the data
-States:
-- projectData
-- pending
-- error
+    States:
+    - projectData
+    - pending
+    - error
 # Write a ProjectsList component to render the list
-props: fetchedProjects
+    props: fetchedProjects
 # Write a ProjectDetails component to render a specific project
-- Must include Update/delete
-# Write a create component to add data to the data.json file
-# 
+    - Must include Update/delete
+# Write a CreateProject component to add data to the data.json file
+    Include e.preventDefault()
+    - stops the DOM from re-rendering for every interaction 
+    Fetch then POST using JSON.stringify
