@@ -1,3 +1,7 @@
+// The following form was to practice pushing <form /> data to a locval JS File.
+// Not needed
+
+
 // ProjectForm.tsx
 import React, { useState } from "react";
 import practiceProjectData from "../../Data/PracticeData.js"; 
