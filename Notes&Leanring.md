@@ -18,6 +18,11 @@ Forgot to import the CSS Tailwind styles into the ```main.tsx``` ...again. No wo
 
 
 ### CHANGE OF PLAN
+Where I went wrong...
+- I was going to write a 'simple' data.js file to save new projects to. Nah ❌
+- It's better to just write CRUD methods and save stringified data to a JSON file ✅
+Why? ...because I know how to do this, and it's still going to take TIME ⌛️
+
 ## Store the data in a .json file rather than a .js file => Local NPX JSON-server
 # Components:
     ProjectsPage - useFetch - ProjectList - ProjectDetails(Edit/Delete)
