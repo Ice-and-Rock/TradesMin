@@ -16,3 +16,8 @@ Forgot to import the CSS Tailwind styles into the ```main.tsx``` ...again. No wo
     - Simple conditionally render the selected project with it's data on the page from a TSX component.
     - Don't use a <Link/> tag, because you have to pass props and data through it ❌ 
 
+### CHANGE OF PLAN
+## Store the data in a .json file rather than a .js file => Local NPX JSON-server
+# Write a useFetch component to retreive the data
+# Write a create component to add data to the data.json file
+# 

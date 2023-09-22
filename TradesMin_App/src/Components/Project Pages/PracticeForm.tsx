@@ -43,14 +43,14 @@ const ProjectForm: React.FC = () => {
             materials: "reset",
             cost: 0,
         });
-        console.log("submitted!" + " " + formData.materials)
-        console.log("form data " + formData)
-        console.log(practiceProjectData)
-        console.log(practiceProjectDataList)
-  
+        // console.log("submitted!" + " " + formData.materials)
+        // console.log("form data " + formData)
+        console.log("Practice Data " + practiceProjectData)
+        
     };
-  return (
-    <div>
+    console.log("PACTICE LIST " + practiceProjectDataList)
+    return (
+        <div>
       <h1>Add a New Project</h1>
       <form onSubmit={handleSubmit}>
         <div>
