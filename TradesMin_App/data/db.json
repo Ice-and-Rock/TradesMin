@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "project_name": "first project",
+      "body": "First project information, here"
+    },
+    {
+      "id": 2,
+      "project_name": "second project",
+      "body": "Second project information."
+    }
+  ]
+}

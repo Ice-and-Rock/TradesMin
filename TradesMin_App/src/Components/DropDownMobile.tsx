@@ -85,7 +85,7 @@ export default function DropDownMobile() {
                   </svg>
                 </div> */}
                 <div>
-                  <a href="/projectpage" className="font-semibold text-gray-900">
+                  <a href="/projectspage" className="font-semibold text-gray-900">
                     Projects
                     <span className="absolute inset-0"></span>
                   </a>

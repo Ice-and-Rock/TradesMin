@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Home } from "./Components/Home";
 import { Footer } from "./Components/Footer";
-import ProjectsPage from "./Components/Project Pages/ProjectsPage";
+import ProjectsPage from "./Components/Projects Pages V2/ProjectsPage.jsx"
+import CreateProject from "./Components/Projects Pages V2/CreateProject.jsx";
 import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
-import AddProjectHandler from "./Components/Project Pages/AddProjectHandler";
 // import projects from "./Data/DummyData";
 
 const App: React.FC = () => {
@@ -18,9 +18,8 @@ const App: React.FC = () => {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projectpage" element={<ProjectsPage />} />
-            <Route path="/newproject" element={<AddProjectHandler />} />
-
+            <Route path="/projectspage" element={<ProjectsPage />} />
+            <Route path="/createproject" element={<CreateProject />} />
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/about" element={<About />} />
           </Routes>

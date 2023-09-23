@@ -23,11 +23,19 @@ Where I went wrong...
 - It's better to just write CRUD methods and save stringified data to a JSON file ✅
 Why? ...because I know how to do this, and it's still going to take TIME ⌛️
 
+# Note for JSON Server
+You can have one json server running ONLY.
+so, close down any other project your working on! ❌
+
+```npx json-server --watch data/db.json --port 8000```
+
+TO DO: add this command to the dev scripts when you can 👍
+
 ## Store the data in a .json file rather than a .js file => Local NPX JSON-server
 # Components:
     ProjectsPage - useFetch - ProjectList - ProjectDetails(Edit/Delete)
     ProjectsPage - CreateProject 
-# Write a ProjectsPage component
+# Write a ProjectsPage component ✅
     call useFetch
     render ProjectList
     render NewProject
@@ -36,11 +44,13 @@ Why? ...because I know how to do this, and it's still going to take TIME ⌛️
     - projectData
     - pending
     - error
-# Write a ProjectsList component to render the list
+# Write a ProjectsList component to render the list ✅
     props: fetchedProjects
-# Write a ProjectDetails component to render a specific project
+# Write a ProjectDetails component to render a specific project ✅
     - Must include Update/delete
-# Write a CreateProject component to add data to the data.json file
-    Include e.preventDefault()
+# Write a CreateProject component to add data to the data.json file ✅
+    Include ```e.preventDefault()```
     - stops the DOM from re-rendering for every interaction 
-    Fetch then POST using JSON.stringify
+    Fetch then POST using ```JSON.stringify```
+    ```useNavigate()``` to re-direct user back to ProjectsPage 
+    
