@@ -46,6 +46,10 @@ TO DO: add this command to the dev scripts when you can 👍
     - error
 # Write a ProjectsList component to render the list ✅
     props: fetchedProjects
+    Issues:
+    - DDMenuMobile had an error for Link. Fixed ✅
+    - Component were changed to JSX due to HTML elements ✅
+        - Caused by conditional rendering for ```error``` and ```isPending```
 # Write a ProjectDetails component to render a specific project ✅
     - Must include Update/delete
 # Write a CreateProject component to add data to the data.json file ✅
@@ -53,4 +57,4 @@ TO DO: add this command to the dev scripts when you can 👍
     - stops the DOM from re-rendering for every interaction 
     Fetch then POST using ```JSON.stringify```
     ```useNavigate()``` to re-direct user back to ProjectsPage 
-    
+
