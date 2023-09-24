@@ -9,7 +9,6 @@ import ProjectDetails from "./Components/Projects Pages V2/ProjectDetails";
 import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
-// import projects from "./Data/DummyData";
 
 const App: React.FC = () => {
   return (

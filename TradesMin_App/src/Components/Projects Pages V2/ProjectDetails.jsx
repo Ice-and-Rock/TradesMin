@@ -10,7 +10,7 @@ const ProjectDetails = () => {
   } = useFetch(`http://localhost:8000/projects/` + id);
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleDelete = () => {
     fetch("http://localhost:8000/projects/" + project.id, {
       method: "DELETE",
     }).then(() => {
@@ -19,7 +19,6 @@ const ProjectDetails = () => {
   };
 
   return (
-    
     <div className="flex flex-col items-center rounded bg-blue-200">
       {isPending && <div>Loading...</div>}
       {error && <div>{error}</div>}
@@ -33,7 +32,16 @@ const ProjectDetails = () => {
             <div className="text-white mb-2">{project.body}</div>
             <button
               className="bg-red-500 text-white px-3 py-1 rounded-full mt-auto hover:bg-red-700"
-              onClick={handleClick}
+              // Remove the next line and add a pop-up
+              //   onClick={handleDelete}
+              onClick={() => {
+                const confirmDelete = window.confirm(
+                  `Are you sure you want to delete ${project.project_name}?`
+                );
+                if (confirmDelete) {
+                  handleDelete();
+                }
+              }}
             >
               Delete
             </button>
@@ -41,7 +49,6 @@ const ProjectDetails = () => {
         </article>
       )}
     </div>
-    
   );
 };
 

@@ -54,6 +54,8 @@ TO DO: add this command to the dev scripts when you can 👍
     Issues:
         - Forgot to call ```useParams()``` and ```Navigate()``` to import the dynamic ```{ id }``` - silly me!
     - Must include Update/delete
+        - handleDelete: onClick prompt to double check
+        - pass dynamic value to the prompt using $ and `backticks` 
 # Write a CreateProject component to add data to the data.json file ✅
     Include ```e.preventDefault()```
         - stops the DOM from re-rendering for every interaction 
