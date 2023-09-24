@@ -11,7 +11,7 @@ const ProjectsPage = () => {
   } = useFetch("http://localhost:8000/projects");
 
   return (
-    <div className="home">
+    <div className="projectsPage">
       {error && <div> {error} </div>}
       {isPending && <div> Waiting for data...</div>}
       {fetchedProjects && (
