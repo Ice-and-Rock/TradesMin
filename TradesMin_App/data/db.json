@@ -26,8 +26,8 @@
       "id": 5
     },
     {
-      "project_name": "erfaerfa",
-      "body": "erferaf",
+      "project_name": "Tersting projectss",
+      "body": "This is where the description goes",
       "id": 6
     },
     {
@@ -35,20 +35,44 @@
       "body": "TESTING BODY",
       "materials": [
         {
-          "Name": "vaerv",
+          "name": "bulb",
           "quantity": 2
         },
         {
-          "Name": "wfawarf",
+          "name": "cables",
           "quantity": 3
         },
         {
-          "Name": "cweFW",
+          "name": "screws",
           "quantity": 32
         }
       ],
       "author": "Nick",
       "id": 7
+    },
+    {
+      "project_name": "second test with .map()",
+      "body": "This is where the test goes to describe the new project",
+      "materials": [
+        {
+          "name": "qerqewrf",
+          "quantity": 123
+        },
+        {
+          "name": "bulbs",
+          "quantity": 12
+        },
+        {
+          "name": "coffee wow",
+          "quantity": 2
+        },
+        {
+          "name": "sicknote",
+          "quantity": 1
+        }
+      ],
+      "author": "Becs",
+      "id": 8
     }
   ]
 }

@@ -30,14 +30,25 @@ const ProjectDetails = () => {
             </h2>
             {/* <p className="text-gray-600">Written by {project.author}</p> */}
             <div className="text-white mb-2">{project.body}</div>
-            <div className="flex justify-between bg-blue-300 rounded p-2 my-2 text-white">
+            {/* <div className="flex justify-between bg-blue-300 rounded p-2 my-2 text-white">
             <div>
             {project.materials[0].Name}
             </div>
             <div>
             {project.materials[0].quantity}
             </div>
-            </div>
+            </div> */}
+
+            {/* MAP THROUGH MATERIALS TO RENDER THEM ALL */}
+            {project.materials.map((material, index) => (
+              <div
+                key={index}
+                className="flex justify-between bg-blue-300 rounded p-2 my-2 text-white"
+              >
+                <p>{material.name}</p>
+                <p>{material.quantity}</p>
+              </div>
+            ))}
             <button
               className="bg-red-500 text-white px-3 py-1 rounded-full mt-auto hover:bg-red-700"
               // Remove the next line and add a pop-up
