@@ -12,8 +12,8 @@ const ProjectsPage = () => {
 
   return (
     <div className="home">
-      {error && <div> <p>{error}</p> </div>}
-      {isPending && <div> <p>Waiting for data...</p> </div>}
+      {error && <div> {error} </div>}
+      {isPending && <div> Waiting for data...</div>}
       {fetchedProjects && (
         <div>
           <div className="links">
