@@ -39,7 +39,7 @@ TO DO: add this command to the dev scripts when you can 👍
     call useFetch
     render ProjectList
     render NewProject
-# Write a useFetch component to retreive the data
+# Write a useFetch component to retreive the data ✅
     States:
     - projectData
     - pending
@@ -62,3 +62,9 @@ TO DO: add this command to the dev scripts when you can 👍
     Fetch then POST using ```JSON.stringify```
     ```useNavigate()``` to re-direct user back to ProjectsPage 
 
+### Well done, it works! Next phase...
+## Make the data more complicated
+# add 'materials[]' to the data object 
+    At the moment both title and body are saved in state
+    - Change the state to ```{ project_name, body, materials[] }```
+    - Add another input field with: ```type, name, value and onChange```
