@@ -29,6 +29,26 @@
       "project_name": "erfaerfa",
       "body": "erferaf",
       "id": 6
+    },
+    {
+      "project_name": "TEST PROJECT",
+      "body": "TESTING BODY",
+      "materials": [
+        {
+          "Name": "vaerv",
+          "quantity": 2
+        },
+        {
+          "Name": "wfawarf",
+          "quantity": 3
+        },
+        {
+          "Name": "cweFW",
+          "quantity": 32
+        }
+      ],
+      "author": "Nick",
+      "id": 7
     }
   ]
 }

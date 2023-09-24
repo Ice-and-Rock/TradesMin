@@ -2,17 +2,26 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CreateProject = () => {
-  const [project_name, setProject_name] = useState("");
+  const [projectName, setProjectName] = useState("");
   const [body, setBody] = useState("");
-  //   const [author, setAuthor] = useState("Nick");
+  const [materials, setMaterials] = useState([]);
+  const [newMaterial, setNewMaterial] = useState({
+    Name: "",
+    quantity: 0,
+  });
+  const [author, setAuthor] = useState("Nick");
   const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Add author and other fields to vairable below ***
-    const project = { project_name, body };
+    const project = {
+      project_name: projectName,
+      body,
+      materials,
+      author,
+    };
 
     setIsPending(true);
 
@@ -23,9 +32,29 @@ const CreateProject = () => {
     }).then(() => {
       console.log("new project added");
       setIsPending(false);
-      // history.go(-1)
       navigate("/projectspage");
     });
+  };
+
+  const handleMaterialChange = (e) => {
+    const { name, value } = e.target;
+    setNewMaterial({
+      ...newMaterial,
+      [name]: name === "quantity" ? parseInt(value) : value,
+    });
+  };
+
+  const addMaterial = () => {
+    if (newMaterial.Name && newMaterial.quantity > 0) {
+      setMaterials([...materials, { ...newMaterial }]);
+      setNewMaterial({ Name: "", quantity: 0 });
+    }
+  };
+
+  const removeMaterial = (index) => {
+    const updatedMaterials = [...materials];
+    updatedMaterials.splice(index, 1);
+    setMaterials(updatedMaterials);
   };
 
   return (
@@ -36,27 +65,73 @@ const CreateProject = () => {
             Create a new project...
           </h2>
           <form onSubmit={handleSubmit}>
-            <label className="text-gray-800">project name :</label>
+            <label className="text-gray-800">Project name:</label>
             <input
               type="text"
               className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring focus:border-pink-600"
               required
-              value={project_name}
-              onChange={(e) => setProject_name(e.target.value)}
+              value={projectName}
+              onChange={(e) => setProjectName(e.target.value)}
             />
-            <label className="text-gray-800">project body :</label>
+            <label className="text-gray-800">Project body:</label>
             <textarea
               className="w-full p-2 border border-gray-300 rounded-md mb-4 focus:outline-none focus:ring focus:border-pink-600"
               required
               value={body}
               onChange={(e) => setBody(e.target.value)}
             ></textarea>
-            {/* <label>project author :</label>
-        <select value={author} onChange={(e) => setAuthor(e.target.value)}>
-          <option value="Nick">Nick</option>
-          <option value="Becs">Becs</option>
-          <option value="Chris">Chris</option>
-        </select> */}
+
+            <label className="text-gray-800">Materials:</label>
+            {materials.map((material, index) => (
+              <div key={index} className="flex">
+                <p className="mr-2">{material.Name}</p>
+                <p className="mr-2">{material.quantity}</p>
+                <button
+                  type="button"
+                  onClick={() => removeMaterial(index)}
+                  className="bg-red-500 text-white px-3 py-1 rounded-full hover:bg-red-700"
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+            <div className="flex">
+              <input
+                type="text"
+                name="Name"
+                placeholder="Material Name"
+                className="w-full p-2 border border-gray-300 rounded-md mb-2 mr-2 focus:outline-none focus:ring focus:border-pink-600"
+                value={newMaterial.Name}
+                onChange={handleMaterialChange}
+              />
+              <input
+                type="number"
+                name="quantity"
+                placeholder="Material Quantity"
+                className="w-full p-2 border border-gray-300 rounded-md mb-2 mr-2 focus:outline-none focus:ring focus:border-pink-600"
+                value={newMaterial.quantity}
+                onChange={handleMaterialChange}
+              />
+              <button
+                type="button"
+                onClick={addMaterial}
+                className="bg-blue-500 text-white px-3 py-1 rounded-full hover:bg-blue-700"
+              >
+                Add Material
+              </button>
+            </div>
+
+            <label>project author :</label>
+            <select
+              name="author"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            >
+              <option value="Nick">Nick</option>
+              <option value="Becs">Becs</option>
+              <option value="Chris">Chris</option>
+            </select>
+
             {!isPending && (
               <button className="bg-pink-600 text-white px-4 py-2 rounded-md cursor-not-allowed">
                 Add project!
@@ -72,9 +147,6 @@ const CreateProject = () => {
               </button>
             )}
           </form>
-          {/* <p>{title}</p>
-      <p>{body}</p> */}
-          {/* <p>{author}</p> */}
         </div>
       </div>
     </div>

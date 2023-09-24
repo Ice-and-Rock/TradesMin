@@ -64,7 +64,7 @@ TO DO: add this command to the dev scripts when you can 👍
 
 ### Well done, it works! Next phase...
 ## Make the data more complicated
-# add 'materials[]' to the data object 
+# add 'materials[{name + quantity}]' to the data object 
     At the moment both title and body are saved in state
-    - Change the state to ```{ project_name, body, materials[] }```
-    - Add another input field with: ```type, name, value and onChange```
+    - Change the state to ```{ project_name, body, materials[] }``` ❌ ...didnt work
+    - Add another input field with: ```type, name, value and onChange``` ❌...didnt work

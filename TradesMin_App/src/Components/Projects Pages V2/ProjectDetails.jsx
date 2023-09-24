@@ -24,12 +24,20 @@ const ProjectDetails = () => {
       {error && <div>{error}</div>}
       {project && (
         <article>
-          <div className="flex flex-col bg-blue-400 m-6 p-4 rounded min-h-[400px]">
+          <div className="flex flex-col bg-blue-400 m-6 p-4 rounded-xl min-h-[400px]">
             <h2 className="text-white text-2xl font-bold mb-2">
               {project.project_name}
             </h2>
             {/* <p className="text-gray-600">Written by {project.author}</p> */}
             <div className="text-white mb-2">{project.body}</div>
+            <div className="flex justify-between bg-blue-300 rounded p-2 my-2 text-white">
+            <div>
+            {project.materials[0].Name}
+            </div>
+            <div>
+            {project.materials[0].quantity}
+            </div>
+            </div>
             <button
               className="bg-red-500 text-white px-3 py-1 rounded-full mt-auto hover:bg-red-700"
               // Remove the next line and add a pop-up
