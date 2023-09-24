@@ -19,7 +19,8 @@ const ProjectDetails = () => {
   };
 
   return (
-    <div className="flex flex-col items-center m-6 rounded bg-blue-300">
+    
+    <div className="flex flex-col items-center rounded bg-blue-200">
       {isPending && <div>Loading...</div>}
       {error && <div>{error}</div>}
       {project && (
@@ -40,6 +41,7 @@ const ProjectDetails = () => {
         </article>
       )}
     </div>
+    
   );
 };
 

@@ -1,14 +1,29 @@
 {
   "projects": [
     {
-      "id": 1,
-      "project_name": "first project",
-      "body": "First project information, here"
+      "project_name": "Power Plant Wiring",
+      "body": "Completed wiring installation for a 100 MW power plant.",
+      "id": 1
     },
     {
-      "id": 2,
-      "project_name": "second project",
-      "body": "Second project information."
+      "project_name": "Factory Expansion",
+      "body": "Electrical infrastructure expansion for a manufacturing facility.",
+      "id": 2
+    },
+    {
+      "project_name": "Hospital Electrical Upgrade",
+      "body": "Upgraded electrical systems for a local hospital to meet safety standards.",
+      "id": 3
+    },
+    {
+      "project_name": "Commercial Building Wiring",
+      "body": "Wiring and lighting installation for a new commercial building.",
+      "id": 4
+    },
+    {
+      "project_name": "Data Center Electrical Setup",
+      "body": "Designed and implemented electrical systems for a data center.",
+      "id": 5
     }
   ]
 }
