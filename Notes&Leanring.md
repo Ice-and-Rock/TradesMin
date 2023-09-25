@@ -70,6 +70,9 @@ TO DO: add this command to the dev scripts when you can 👍
     - Change the state to ```{ project_name, body, materials[] }``` ❌ ...didnt work
     - Add another input field with: ```type, name, value and onChange``` ❌...didnt work
 *createProject Page* 
+    fix all of the layout and design
+        - add bin icon to the delete button ✅
+        - laout of the materials, quantity and delete <div/> ✅
 
 *projectDetails page*
-    Use .map() to display all of the materials => name + quantity
+    Use .map() to display all of the materials => name + quantity ✅

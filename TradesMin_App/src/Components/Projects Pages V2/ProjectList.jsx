@@ -6,7 +6,7 @@ const ProjectsList = ({ fetchedProjects, title }) => {
 
   return (
     <div className="projects-list">
-      <h2 className="text-2xl text-pink-600 mb-4">{title}</h2>
+      <h2 className="text-2xl text-pink-600 font-bold mb-4">{title}</h2>
       {fetchedProjects.map(( project ) => (
         <div
           className=".p-2 md:p-4 my-5 border-b border-gray-300 hover:shadow-md text-pink-600 hover:text-pink-500"
