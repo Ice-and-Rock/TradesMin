@@ -55,7 +55,7 @@
       "body": "This is where the test goes to describe the new project",
       "materials": [
         {
-          "name": "qerqewrf",
+          "name": "jump leads",
           "quantity": 123
         },
         {
@@ -73,6 +73,26 @@
       ],
       "author": "Becs",
       "id": 8
+    },
+    {
+      "project_name": "ready to be deleted",
+      "body": "deletable project. os sss o mmmmmmmmmm sssdhblehrf ervferfv vearvfre",
+      "materials": [
+        {
+          "name": "wefdwae",
+          "quantity": 22
+        },
+        {
+          "name": "ferfre",
+          "quantity": 12
+        },
+        {
+          "name": "erfreq",
+          "quantity": 2
+        }
+      ],
+      "author": "Nick",
+      "id": 9
     }
   ]
 }

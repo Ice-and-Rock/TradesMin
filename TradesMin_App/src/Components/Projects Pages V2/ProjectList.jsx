@@ -7,7 +7,7 @@ const ProjectsList = ({ fetchedProjects, title }) => {
   return (
     <div className="projects-list">
       <h2 className="text-2xl text-pink-600 mb-4">{title}</h2>
-      {fetchedProjects.map((project) => (
+      {fetchedProjects.map(( project ) => (
         <div
           className=".p-2 md:p-4 my-5 border-b border-gray-300 hover:shadow-md text-pink-600 hover:text-pink-500"
           key={project.id}
@@ -19,7 +19,10 @@ const ProjectsList = ({ fetchedProjects, title }) => {
           </Link>
           </div>
         </div>
-      ))}
+      ))
+      // REVERSE the order of the data ✅
+      .reverse()
+      }
     </div>
   );
 };
