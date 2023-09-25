@@ -3,31 +3,43 @@
     {
       "project_name": "Power Plant Wiring",
       "body": "Completed wiring installation for a 100 MW power plant.",
+      "materials": [],
+      "author": "Nick",
       "id": 1
     },
     {
       "project_name": "Factory Expansion",
       "body": "Electrical infrastructure expansion for a manufacturing facility.",
+      "materials": [],
+      "author": "Nick",
       "id": 2
     },
     {
       "project_name": "Hospital Electrical Upgrade",
       "body": "Upgraded electrical systems for a local hospital to meet safety standards.",
+      "materials": [],
+      "author": "Nick",
       "id": 3
     },
     {
       "project_name": "Commercial Building Wiring",
       "body": "Wiring and lighting installation for a new commercial building.",
+      "materials": [],
+      "author": "Nick",
       "id": 4
     },
     {
       "project_name": "Data Center Electrical Setup",
       "body": "Designed and implemented electrical systems for a data center.",
+      "materials": [],
+      "author": "Nick",
       "id": 5
     },
     {
       "project_name": "Tersting projectss",
       "body": "This is where the description goes",
+      "materials": [],
+      "author": "",
       "id": 6
     },
     {
@@ -109,6 +121,13 @@
       ],
       "author": "Nick",
       "id": 10
+    },
+    {
+      "project_name": "empty materials test",
+      "body": "no materials for this test",
+      "materials": [],
+      "author": "Nick",
+      "id": 11
     }
   ]
 }

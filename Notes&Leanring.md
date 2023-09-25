@@ -77,6 +77,8 @@ TO DO: add this command to the dev scripts when you can 👍
 
 *projectDetails page*
     Use .map() to display all of the materials => name + quantity ✅
-        ERROR:
-        - Can't map through data without 'materials[]' in object. 
-        - Needs to be made conditional to see if any 'materials' exist 
+        ERROR: ❌
+            - Can't map through data without ```"materials[]"``` in object. 
+            - Needs to be made conditional to see if any 'materials' exist 
+        FALSE ALARM ✅
+            - The previous phase data was missing the materials and author value pairs 

@@ -40,6 +40,7 @@ const ProjectDetails = () => {
             </div> */}
 
             {/* MAP THROUGH MATERIALS TO RENDER THEM ALL */}
+            {/* Must be conditional IF 'materials' exist */}
             {project.materials.map((material, index) => (
               <div
                 key={index}
@@ -49,6 +50,10 @@ const ProjectDetails = () => {
                 <p>{material.quantity}</p>
               </div>
             ))}
+            <div className="">
+            <div className="text-pink-500 mt-auto mr-auto">
+                Created by: {project.author}
+            </div>
             <button
               className="bg-red-500 text-white px-3 py-1 rounded-full mt-auto ml-auto max-w-[100px] shadow-md hover:bg-red-700"
               // Remove the next line and add a pop-up
@@ -84,6 +89,7 @@ const ProjectDetails = () => {
               </div>
               </div>
             </button>
+            </div>
           </div>
         </article>
       )}
