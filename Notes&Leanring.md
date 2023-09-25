@@ -63,6 +63,7 @@ TO DO: add this command to the dev scripts when you can 👍
     Fetch then POST using ```JSON.stringify```
     ```useNavigate()``` to re-direct user back to ProjectsPage 
 
+
 ### Well done, it works! Next phase...
 ## Make the data more complicated
 # add 'materials[{name + quantity}]' to the data object 
@@ -76,3 +77,6 @@ TO DO: add this command to the dev scripts when you can 👍
 
 *projectDetails page*
     Use .map() to display all of the materials => name + quantity ✅
+        ERROR:
+        - Can't map through data without 'materials[]' in object. 
+        - Needs to be made conditional to see if any 'materials' exist 

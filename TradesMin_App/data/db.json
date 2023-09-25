@@ -93,6 +93,22 @@
       ],
       "author": "Nick",
       "id": 9
+    },
+    {
+      "project_name": "Malaga",
+      "body": "Holidaysssss",
+      "materials": [
+        {
+          "name": "Accomdation",
+          "quantity": 1
+        },
+        {
+          "name": "Vans hire",
+          "quantity": 3
+        }
+      ],
+      "author": "Nick",
+      "id": 10
     }
   ]
 }
