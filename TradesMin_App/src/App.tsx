@@ -9,6 +9,7 @@ import ProjectDetails from "./Components/Projects Pages V2/ProjectDetails";
 import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
+import EditProject from "./Components/Projects Pages V2/EditProject";
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/projectspage" element={<ProjectsPage />} />
             <Route path="/createproject" element={<CreateProject />} />
+            <Route path="editproject/:id" element={<EditProject />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
 
             <Route path="/notfound" element={<NotFound />} />

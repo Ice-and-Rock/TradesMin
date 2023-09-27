@@ -50,6 +50,7 @@ TO DO: add this command to the dev scripts when you can 👍
         - DDMenuMobile had an error for Link. Fixed ✅
         - Component were changed to JSX due to HTML elements ✅
             - Caused by conditional rendering for ```error``` and ```isPending```
+        - reverse the order of the list using ```.reverse()```, newest first ✅
 # Write a ProjectDetails component to render a specific project ✅
     Issues:
         - Forgot to call ```useParams()``` and ```Navigate()``` to import the dynamic ```{ id }``` - silly me!
@@ -62,9 +63,22 @@ TO DO: add this command to the dev scripts when you can 👍
     Fetch then POST using ```JSON.stringify```
     ```useNavigate()``` to re-direct user back to ProjectsPage 
 
+
 ### Well done, it works! Next phase...
 ## Make the data more complicated
-# add 'materials[]' to the data object 
+# add 'materials[{name + quantity}]' to the data object 
     At the moment both title and body are saved in state
-    - Change the state to ```{ project_name, body, materials[] }```
-    - Add another input field with: ```type, name, value and onChange```
+    - Change the state to ```{ project_name, body, materials[] }``` ❌ ...didnt work
+    - Add another input field with: ```type, name, value and onChange``` ❌...didnt work
+*createProject Page* 
+    fix all of the layout and design
+        - add bin icon to the delete button ✅
+        - laout of the materials, quantity and delete <div/> ✅
+
+*projectDetails page*
+    Use .map() to display all of the materials => name + quantity ✅
+        ERROR: ❌
+            - Can't map through data without ```"materials[]"``` in object. 
+            - Needs to be made conditional to see if any 'materials' exist 
+        FALSE ALARM ✅
+            - The previous phase data was missing the materials and author value pairs 
