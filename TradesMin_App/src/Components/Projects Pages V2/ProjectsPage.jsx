@@ -3,18 +3,31 @@ import useFetch from "./useFetch.jsx";
 import ProjectList from "./ProjectList.jsx";
 import { Link } from "react-router-dom";
 
+// API --------------------------------------------------------------------------------------------
+const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
+
+
+  // FOR LATER... (sign in)
+  // const supabase = createClient(supabaseUrl, supabaseKey)
+
+
 const ProjectsPage = () => {
+
+  
+  
+
   const {
     data: fetchedProjects,
     isPending,
     error,
-  } = useFetch("http://localhost:8000/projects");
+  } = useFetch(supabaseUrl, supabaseKey, {});
 
   return (
     <div className="flex h-max bg-gradient-to-b from-blue-100 to-blue-300">
       <div className="bg-blue-200 m-8 sm:p-8 shadow m-8 rounded-xl flex flex-col">
         {error && <div className="text-red-600"> {error} </div>}
-        {isPending && <div className="text-pink-500 font-bold m-2 p-2"> Waiting for data...</div>}
+        {isPending && <div className="text-pink-500 font-bold m-2 p-2"> Waiting for data... </div>}
         {fetchedProjects && (
           <div>
             <div className="flex flex-col p-2 min-w-auto">

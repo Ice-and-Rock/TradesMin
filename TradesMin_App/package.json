@@ -11,6 +11,8 @@
     "server": "json-server — watch data/db.json — port 6000"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.36.0",
+    "process": "^0.11.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0"

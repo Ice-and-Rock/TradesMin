@@ -1,4 +1,5 @@
 import "./index.css";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Home } from "./Components/Home";
@@ -10,6 +11,9 @@ import NotFound from "./Components/NotFound";
 import About from "./Components/About";
 import { Navbar } from "./Components/Navbar";
 import EditProject from "./Components/Projects Pages V2/EditProject";
+
+
+
 
 const App: React.FC = () => {
   return (

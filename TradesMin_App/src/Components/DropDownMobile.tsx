@@ -36,8 +36,8 @@ export default function DropDownMobile() {
         <div className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4">
           <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-blue-200 text-sm leading-6 shadow-xl ring-1 ring-gray-900/5">
             <div className="p-4">
-              <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+              <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-pink-200">
+                <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-blue-200">
                   <svg
                     className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
                     fill="none"

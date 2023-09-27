@@ -1,5 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { createClient } from '@supabase/supabase-js'
+
+
+// const supabaseUrl = process.env.SUPABASE_URL
+// const supabaseKey = process.env.SUPABASE_KEY
+// const supabase = createClient(supabaseUrl, supabaseKey)
 
 const CreateProject = () => {
   const [projectName, setProjectName] = useState("");
@@ -17,7 +23,7 @@ const CreateProject = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    // prevent the page from reloading on each eventChange
+    // prevent the page from reloading on each eventChange ✅
     e.preventDefault();
 
     const project = {

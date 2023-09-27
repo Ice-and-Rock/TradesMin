@@ -1,49 +1,52 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
+import { createClient } from '@supabase/supabase-js'
 
-const useFetch = (url) => {
+// const supabaseUrl = process.env.REACT_APP_DB_URL
+// const supabaseKey = process.env.REACT_APP_DB_KEY
 
-    const [data, setData] = useState(null)
-    const [isPending, setIsPending] = useState(true)
-    const [error, setError] = useState(null)
+const useFetch = (supabaseUrl, supabaseKey) => {
 
-console.log("useFetch running 1")
+  const supabase = createClient(supabaseUrl, supabaseKey)
 
-    useEffect ( () => {
-const abortCont = new AbortController();
+  const [data, setData] = useState(null);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
 
-        setTimeout(() => {
-            fetch(url, { signal: abortCont.signal })
-                .then (res => {
-                    if(!res.ok) {
-                        throw Error ("Could not find the data for that - sorry")
-                    }
-                    return res.json();
-                })
-                .then (data => {
-                    setData(data)
-                    setIsPending(false)
-                    setError(null)
-                    
-                })
-                .catch(err => {
-                    if (err.name === 'AbortError') {
-                        
-                        console.log('fetch aborted')
-                    } else {
-                    setIsPending(false) 
-                    setError(err.message)
-                    console.log('fetch retrieved sucessfully')
-                    }
-            })
-        }, 500)
+  console.log("useFetch running 1");
 
-        return () => abortCont.abort();
+  useEffect(() => {
+    const abortCont = new AbortController();
 
-    }, [url]); 
+    setTimeout(() => {
+     supabase
+        .from('projects')
+        .select()
+        .then(({ data, error }) => {
+            if (error) {
+                setError(error.message)
+                setIsPending(false)
+                return
+            }
+            setData(data)
+            setIsPending(false)
+            setError(null)
+        })
+        .catch((err) => {
+            if (err.name === 'abortError') {
+                console.log('fetch aborted - something went wrong!')
+            } else {
+                setIsPending(false)
+                setError(err.message)
+                console.error('Error:', err.message)
+            }
+        })
+    }, 500);
 
-    return { data, isPending, error }
+    return () => abortCont.abort();
+  }, [supabaseUrl, supabaseKey]);
 
-}
+  return { data, isPending, error };
+};
 
 export default useFetch;
