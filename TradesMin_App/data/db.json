@@ -87,20 +87,24 @@
       "id": 8
     },
     {
-      "project_name": "Ready to be deleted",
-      "body": "deletable project. os sss o mmmmmmmmmm sssdhblehrf ervferfv vearvfre",
+      "project_name": "Deletable Project",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       "materials": [
         {
-          "name": "wefdwae",
-          "quantity": 22
+          "name": "Stuff ",
+          "quantity": 9
         },
         {
-          "name": "ferfre",
-          "quantity": 12
+          "name": "More stufff ",
+          "quantity": 99
         },
         {
-          "name": "erfreq",
-          "quantity": 2
+          "name": "even more stuff ",
+          "quantity": 9
+        },
+        {
+          "name": "again, more stuff ",
+          "quantity": 9
         }
       ],
       "author": "Nick",
@@ -128,6 +132,34 @@
       "materials": [],
       "author": "Nick",
       "id": 11
+    },
+    {
+      "project_name": "Lorem ipsum",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+      "materials": [
+        {
+          "name": "testing the edit",
+          "quantity": 2
+        },
+        {
+          "name": "coffee wow!",
+          "quantity": 1
+        },
+        {
+          "name": "nicholas",
+          "quantity": 67
+        },
+        {
+          "name": "Cafeine  ",
+          "quantity": 99999
+        },
+        {
+          "name": "Cafeine Rage",
+          "quantity": 2222
+        }
+      ],
+      "author": "Chris",
+      "id": 12
     }
   ]
 }

@@ -15,7 +15,7 @@ const ProjectsList = ({ fetchedProjects, title }) => {
         <div className="rounded-xl p-3 m-1 bg-blue-300 shadow-md hover:shadow-2xl ">
           <Link to={`/projects/${project.id}`}>
             <h2 className="text-2xl text-pink-600 mb-2">{project.project_name}</h2>
-            <p className="text-gray-800">{project.body}</p>
+            <p className="text-gray-800 text-sm">{project.body}</p>
           </Link>
           </div>
         </div>

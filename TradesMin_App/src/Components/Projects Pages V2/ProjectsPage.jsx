@@ -11,7 +11,7 @@ const ProjectsPage = () => {
   } = useFetch("http://localhost:8000/projects");
 
   return (
-    <div className="flex h-max bg-blue-100">
+    <div className="flex h-max bg-gradient-to-b from-blue-100 to-blue-300">
       <div className="bg-blue-200 m-8 sm:p-8 shadow m-8 rounded-xl flex flex-col">
         {error && <div className="text-red-600"> {error} </div>}
         {isPending && <div className="text-pink-500 font-bold m-2 p-2"> Waiting for data...</div>}
@@ -20,7 +20,7 @@ const ProjectsPage = () => {
             <div className="flex flex-col p-2 min-w-auto">
               <Link
                 to="/createproject"
-                className="flex flex-row bg-pink-500 text-white py-2 px-4 m-4 rounded-full shadow-md hover:bg-pink-700"
+                className="flex flex-row bg-gradient-to-t from-pink-500 to-pink-400 text-white py-2 px-4 m-4 rounded-full shadow-xl hover:bg-pink-700"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +28,7 @@ const ProjectsPage = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6 pr-2"
+                  className="w-7 h-6 pr-2"
                 >
                   <path
                     strokeLinecap="round"
