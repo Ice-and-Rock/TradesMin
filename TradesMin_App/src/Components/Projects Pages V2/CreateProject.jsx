@@ -5,7 +5,6 @@ import { createClient } from '@supabase/supabase-js'
 
 // const supabaseUrl = process.env.SUPABASE_URL
 // const supabaseKey = process.env.SUPABASE_KEY
-// const supabase = createClient(supabaseUrl, supabaseKey)
 const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
 
@@ -44,26 +43,26 @@ const CreateProject = () => {
       if (error) {
         throw error
       }
-      console.log("new project added:", data)
-
+      
       const projectId = data[0].id;
-      const materialRecords = materials.map((material) => ({
+      const materialLogs = materials.map((material) => ({
         project_id: projectId,
         name: material.name,
         quantity: material.quantity,
       }));
-
+      
       const { error: materialError } = await supabase
-        .from("materials")
-        .insert(materialRecords);
+      .from("materials")
+      .insert(materialLogs);
       if (materialError) {
-        throw materialError;
+        throw "material error" + materialError;
       }
-
+      
       console.log("Materials added successfully!");
-
+      
       setIsPending(false);
       navigate("/projectspage");
+      console.log("new project added:", data)
     } catch (error) {
       console.error("Error creating project:", error.message);
       setIsPending(false);

@@ -86,9 +86,12 @@ TO DO: add this command to the dev scripts when you can 👍
 
 ## OK, now the hard part...
 ### Integrate the SupaBase Backend...
+Notes:
+- initially hold the URL and key in each component to simplify things
+- 
 
-# Create a new database and table called 'projects'
-Columns:
+# Create a new database and table called 'projects' ✅
+Columns: 
 - id
 - project_name
 - body
@@ -103,11 +106,22 @@ Done initially to render state in ProjectsPage
         .select() - ALL
         .then setData(data)
         </code>
-    - Pass state down to ProjectList as props with title 
+    - Pass state down to ProjectList as props with title ✅
         render fetchedProjects as before using .map() and :id
 # CREATE
+Change the PUT request to an INSERT request using supabase (URL/key)
+    - fetch the data from supabase
+    - assign the new projectId to be the first part of the data array
+        projectId = data[0].id
+    *Materials* ✅
+        - assign materialLogs to .map through the materials array objects
+            materialLogs = materials.map()
+        - insert materialLogs into the ('materials') column
+    - Set isPending/Navigate as before ✅
 
-# READ
+# READ (ProjectDetails)
+Create a fetch request specific for the selected project's id
+    - 
 
 # UPDATE
 
