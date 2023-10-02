@@ -82,3 +82,33 @@ TO DO: add this command to the dev scripts when you can 👍
             - Needs to be made conditional to see if any 'materials' exist 
         FALSE ALARM ✅
             - The previous phase data was missing the materials and author value pairs 
+
+
+## OK, now the hard part...
+### Integrate the SupaBase Backend...
+
+# Create a new database and table called 'projects'
+Columns:
+- id
+- project_name
+- body
+- materials (array in JSON)
+- author
+# Make an initial API fetch using the supabase: URL and Key
+Done initially to render state in ProjectsPage
+    - useFetch ✅
+        <code>
+        supabase
+        .from(projects)
+        .select() - ALL
+        .then setData(data)
+        </code>
+    - Pass state down to ProjectList as props with title 
+        render fetchedProjects as before using .map() and :id
+# CREATE
+
+# READ
+
+# UPDATE
+
+# DELETE 
