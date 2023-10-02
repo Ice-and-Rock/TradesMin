@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/supabase-js'
 
 
 // const supabaseUrl = process.env.SUPABASE_URL
 // const supabaseKey = process.env.SUPABASE_KEY
 // const supabase = createClient(supabaseUrl, supabaseKey)
+const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
+
 
 const CreateProject = () => {
+  const supabase = createClient(supabaseUrl, supabaseKey)
   const [projectName, setProjectName] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Nick");
@@ -22,7 +26,7 @@ const CreateProject = () => {
   });
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // prevent the page from reloading on each eventChange ✅
     e.preventDefault();
 
@@ -35,16 +39,47 @@ const CreateProject = () => {
 
     setIsPending(true);
 
-    fetch("http://localhost:8000/projects", {
-      method: "POST",
-      headers: { "content-Type": "application/json" },
-      body: JSON.stringify(project),
-    }).then(() => {
-      console.log("new project added");
+    try {
+      const { data, error } = await supabase.from("projects").insert([project])
+      if (error) {
+        throw error
+      }
+      console.log("new project added:", data)
+
+      const projectId = data[0].id;
+      const materialRecords = materials.map((material) => ({
+        project_id: projectId,
+        name: material.name,
+        quantity: material.quantity,
+      }));
+
+      const { error: materialError } = await supabase
+        .from("materials")
+        .insert(materialRecords);
+      if (materialError) {
+        throw materialError;
+      }
+
+      console.log("Materials added successfully!");
+
       setIsPending(false);
       navigate("/projectspage");
-    });
-  };
+    } catch (error) {
+      console.error("Error creating project:", error.message);
+      setIsPending(false);
+    }
+    }
+
+    // fetch("http://localhost:8000/projects", {
+    //   method: "POST",
+    //   headers: { "content-Type": "application/json" },
+    //   body: JSON.stringify(project),
+    // }).then(() => {
+    //   console.log("new project added");
+    //   setIsPending(false);
+    //   navigate("/projectspage");
+    // });
+  
 
   const handleMaterialChange = (e) => {
     const { name, value } = e.target;
@@ -57,7 +92,7 @@ const CreateProject = () => {
   const addMaterial = () => {
     if (newMaterial.name && newMaterial.quantity > 0) {
       setMaterials([...materials, { ...newMaterial }]);
-      setNewMaterial({ name: "", quantity: 0 });
+      setNewMaterial({ name: "", quantity: "" });
     }
   };
 

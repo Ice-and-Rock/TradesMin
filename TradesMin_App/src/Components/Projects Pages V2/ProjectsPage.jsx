@@ -4,8 +4,8 @@ import ProjectList from "./ProjectList.jsx";
 import { Link } from "react-router-dom";
 
 // API --------------------------------------------------------------------------------------------
-const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
+// const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
+// const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
 
 
   // FOR LATER... (sign in)
@@ -14,14 +14,11 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const ProjectsPage = () => {
 
-  
-  
-
   const {
     data: fetchedProjects,
     isPending,
     error,
-  } = useFetch(supabaseUrl, supabaseKey, {});
+  } = useFetch();
 
   return (
     <div className="flex h-max bg-gradient-to-b from-blue-100 to-blue-300">
