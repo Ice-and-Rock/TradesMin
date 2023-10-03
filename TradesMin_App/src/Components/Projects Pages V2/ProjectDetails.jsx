@@ -1,15 +1,16 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 
 
 
  // API --------------------------------------------------------------------------------------------
-
+ const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
+ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
+ const supabase = createClient(supabaseUrl, supabaseKey)
+ 
  
  const ProjectDetails = () => {
- 
-  // const { projectId } = useParams();
-  // const [project, setProject] = useState(null);
   const [error, setError] = useState(null);
   const location = useLocation()
   const { project } = location.state;
@@ -50,11 +51,20 @@ import { useState } from "react";
   const navigate = useNavigate();
 
   const handleDelete = async () => {
-    fetch("http://localhost:8000/projects/" + project.id, {
-      method: "DELETE",
-    }).then(() => {
-      navigate("/projectspage");
-    });
+    try {
+      const { error } = await supabase
+        .from('projects')
+        .delete()
+        .eq('id', project.id)
+
+        if (error) {
+          throw error
+        }
+        console.log(`project with name: '${project.project_name}' has been deleted. Project information: '${project.body}'`)
+        navigate("/projectspage");
+      } catch (error) {
+        setError(error.message)
+      }
   };
 
 

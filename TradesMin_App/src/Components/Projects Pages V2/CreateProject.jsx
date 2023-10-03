@@ -61,7 +61,7 @@ const CreateProject = () => {
       console.log("Materials added successfully!");
       
       setIsPending(false);
-      navigate("/projectspage");
+      navigate("/projectspage")
       console.log("new project added:", data)
     } catch (error) {
       console.error("Error creating project:", error.message);
