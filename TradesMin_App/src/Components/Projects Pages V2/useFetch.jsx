@@ -4,11 +4,11 @@ import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 
 const useFetch = () => {
 
-  const supabase = createClient(supabaseUrl, supabaseKey)
 
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);

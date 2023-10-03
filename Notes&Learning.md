@@ -112,7 +112,7 @@ Done initially to render state in ProjectsPage
 Change the PUT request to an INSERT request using supabase (URL/key)
     - fetch the data from supabase
     - assign the new projectId to be the first part of the data array
-        projectId = data[0].id
+        ```projectId = data[0].id```
     *Materials* ✅
         - assign materialLogs to .map through the materials array objects
             materialLogs = materials.map()
@@ -120,9 +120,19 @@ Change the PUT request to an INSERT request using supabase (URL/key)
     - Set isPending/Navigate as before ✅
 
 # READ (ProjectDetails)
-Create a fetch request specific for the selected project's id
-    - 
+Create a fetch request specific for the selected project's :id ❌
+    - Didn't work!
+**New approach** 
+Create a State variable in the ProjectList <Link> tags
+    - Pass this to the ProjectDetails component with ```useLocation()``` 
+    - This will use the origional useFetch ✅
+    - This will not require another server request using an ID
+    - The entire ```project``` object selected in .map() will be passed as a prop ✅
+Docs:
+https://ui.dev/react-router-pass-props-to-link
 
 # UPDATE
 
+
 # DELETE 
+

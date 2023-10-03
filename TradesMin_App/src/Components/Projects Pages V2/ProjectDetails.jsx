@@ -1,45 +1,66 @@
-import { Link, useParams } from "react-router-dom";
-import useFetch from "./useFetch";
-import { createClient } from '@supabase/supabase-js'
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
 
  // API --------------------------------------------------------------------------------------------
- const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
- const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
+
  
+ const ProjectDetails = () => {
  
- const ProjectDetails = (  ) => {
-  const supabase = createClient(supabaseUrl, supabaseKey)
-  const { id } = useParams();
-  const {
-    data: project,
-    isPending,
-  } = useFetch(supabaseUrl, supabaseKey, {
-    single: true, 
-    eq: id,       
-  });
+  // const { projectId } = useParams();
+  // const [project, setProject] = useState(null);
+  const [error, setError] = useState(null);
+  const location = useLocation()
+  const { project } = location.state;
+  
+  console.log("selectedProject:", project)
 
-  const { data, error } = await supabase
-  .from('cities')
-  .select('name, country_id')
-  .eq('name', 'The Shire') 
+  // const {
+  //   data: project,
+  //   isPending,
+  // } = useFetch(supabaseUrl, supabaseKey, {
+  //   single: true, 
+  //   eq: id,       
+  // });
 
-  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   const fetchProject = async () => {
+  //     try {
+  //       const { data, error } = await supabase
+  //       .from('projects')
+  //       .select()
+  //       .eq('id', `${projectId}`) 
+  //       .single();
+  //         if (error) {
+  //             throw error;
+  //           }
+  //           setProject(data);
+  //           setIsPending(false);
+  //         } catch (error) {
+  //           setError(error.message);
+  //           setIsPending(false);
+  //         }
+  //       };
 
-  // const handleDelete = () => {
-  //   fetch("http://localhost:8000/projects/" + project.id, {
-  //     method: "DELETE",
-  //   }).then(() => {
-  //     navigate("/projectspage");
-  //   });
-  // };
+  //       fetchProject()
+  //     }, [projectId])
+
+
+  const navigate = useNavigate();
+
+  const handleDelete = async () => {
+    fetch("http://localhost:8000/projects/" + project.id, {
+      method: "DELETE",
+    }).then(() => {
+      navigate("/projectspage");
+    });
+  };
 
 
 
   return (
     <div className="flex flex-col items-center rounded bg-blue-200">
-      {isPending && <div>Loading...</div>}
       {error && <div>{error}</div>}
       {project && (
         <article>
@@ -127,6 +148,7 @@ import { createClient } from '@supabase/supabase-js'
             </div>
           </div>
         </article>
+      
       )}
     </div>
   );
