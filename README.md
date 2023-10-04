@@ -5,3 +5,7 @@ An app commissioned for an Electrical Engineering Company based between France a
 - passing state through <Link> tags using ```useLocation() + location.state```
     - From useFetch > ProjectList > ProjectDetails
 - 
+
+
+
+Font style - Blanka + Ballaboo 

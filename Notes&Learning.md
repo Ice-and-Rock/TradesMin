@@ -135,4 +135,7 @@ https://ui.dev/react-router-pass-props-to-link
 
 
 # DELETE 
+Send a DELETE request to supabase client using the ```project.id``` from state object (project: )
+    - Create a function ```handleDelete``` from the delete button JSX ✅ 
+    - Must be: async, console log the deletion and use navigate() once successful ✅
 

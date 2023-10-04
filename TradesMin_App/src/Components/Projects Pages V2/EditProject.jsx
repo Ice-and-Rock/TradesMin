@@ -1,5 +1,12 @@
+import { createClient } from "@supabase/supabase-js";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
+ // API --------------------------------------------------------------------------------------------
+ const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
+ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
+ const supabase = createClient(supabaseUrl, supabaseKey)
+ 
 
 const EditProject = () => {
   const { id } = useParams(); // Get the project ID from the URL
@@ -14,41 +21,68 @@ const EditProject = () => {
   const [isPending, setIsPending] = useState(false);
   const navigate = useNavigate();
 
+  // Fetch the data by the Id number !
   useEffect(() => {
-    // Fetch the project data by its ID when the component mounts
-        // setProject and setEditedMaterials data 
-    fetch(`http://localhost:8000/projects/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setProject(data);
-        setEditedMaterials(data.materials);
-      })
-      
-      .catch((error) => console.error("Error fetching project:", error));
+    async function fetchProjectData() {
+      try {
+        const { data, error } = await supabase
+          .from("projects")
+          .select()
+          .eq("id", id)
+          .single()
+
+          if (error) {
+            throw error
+          }
+          setProject(data)
+          setEditedMaterials(data.materials)
+      } catch (error) {
+        console.log("This si the Error:", error)
+      }
+    }
+    fetchProjectData()
   }, [id]);
 
-  
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
       e.preventDefault();
-      
       setIsPending(true);
       
-      const updatedProject = { ...project, materials: editedMaterials }
+      const updatedFields = {
+        project_name: project.project_name,
+        body: project.body,
+        materials: editedMaterials,
+      };
+      try {
+        const { error } = await supabase
+        .from("projects")
+        .update(updatedFields).eq("id", id)
+
+        if (error) {
+          throw error
+        }
+        console.log("Project updated successfully");
+        setIsPending(false);
+        navigate('/projectspage'); 
+      } catch (error) {
+        console.error("This si the error:", error)
+      }
+    }
       
       // Perform the update (PUT) request with the updated project data
       // Redirect to the project details page
-      fetch(`http://localhost:8000/projects/${id}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(updatedProject),
-        })
-        .then(() => {
-            console.log("Project updated successfully");
-            setIsPending(false);
-            navigate(`/projects/${id}`); 
-        })
-        .catch((error) => console.error("Error updating project:", error));
-    };
+    //   fetch(`http://localhost:8000/projects/${id}`, {
+    //       method: "PUT",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify(updatedProject),
+    //     })
+    //     .then(() => {
+    //         console.log("Project updated successfully");
+    //         setIsPending(false);
+    //         navigate(`/projects/${id}`); 
+    //     })
+    //     .catch((error) => console.error("Error updating project:", error));
+    // };
     
     const handleInputChange = (e) => {
         const { name, value } = e.target;
