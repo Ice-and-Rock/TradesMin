@@ -14,7 +14,7 @@ const ProjectsPage = () => {
   } = useFetch();
 
   return (
-    <div className="flex h-max bg-gradient-to-b from-blue-100 to-blue-300">
+    <div className="flex h-full bg-gradient-to-b from-blue-100 to-blue-300">
       <div className="bg-blue-200 m-8 sm:p-8 shadow m-8 rounded-xl flex flex-col">
         {error && <div className="text-red-600"> {error} </div>}
         {isPending && <div className="text-pink-500 font-bold m-2 p-2"> Waiting for data... </div>}
