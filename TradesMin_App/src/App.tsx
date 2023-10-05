@@ -6,13 +6,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Home } from "./components/Home";
 import { Footer } from "./components/Footer";
-import ProjectsPage from "./components/Projects Pages V2/ProjectsPage.jsx"
-import CreateProject from "./components/Projects Pages V2/CreateProject.jsx";
-import ProjectDetails from "./components/Projects Pages V2/ProjectDetails";
+import ProjectsPage from "./components/ProjectsPagesV2/ProjectsPage.jsx"
+import CreateProject from "./components/ProjectsPagesV2/CreateProject.jsx";
+import ProjectDetails from "./components/ProjectsPagesV2/ProjectDetails.jsx";
 import NotFound from "./components/NotFound";
 import About from "./components/About";
 import { Navbar } from "./components/Navbar";
-import EditProject from "./components/Projects Pages V2/EditProject";
+import EditProject from "./components/ProjectsPagesV2/EditProject";
 
 
 
