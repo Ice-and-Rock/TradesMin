@@ -2,15 +2,17 @@ import "./index.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Home } from "./Components/Home";
-import { Footer } from "./Components/Footer";
-import ProjectsPage from "./Components/Projects Pages V2/ProjectsPage.jsx"
-import CreateProject from "./Components/Projects Pages V2/CreateProject.jsx";
-import ProjectDetails from "./Components/Projects Pages V2/ProjectDetails";
-import NotFound from "./Components/NotFound";
-import About from "./Components/About";
-import { Navbar } from "./Components/Navbar";
-import EditProject from "./Components/Projects Pages V2/EditProject";
+
+
+import { Home } from "./components/Home";
+import { Footer } from "./components/Footer";
+import ProjectsPage from "./components/Projects Pages V2/ProjectsPage.jsx"
+import CreateProject from "./components/Projects Pages V2/CreateProject.jsx";
+import ProjectDetails from "./components/Projects Pages V2/ProjectDetails";
+import NotFound from "./components/NotFound";
+import About from "./components/About";
+import { Navbar } from "./components/Navbar";
+import EditProject from "./components/Projects Pages V2/EditProject";
 
 
 

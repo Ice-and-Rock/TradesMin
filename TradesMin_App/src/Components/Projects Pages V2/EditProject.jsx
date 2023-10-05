@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
  // API --------------------------------------------------------------------------------------------
- const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
- const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
- const supabase = createClient(supabaseUrl, supabaseKey)
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabase = createClient(supabaseUrl, supabaseKey)
  
 
 const EditProject = () => {
@@ -68,21 +68,6 @@ const EditProject = () => {
         console.error("This si the error:", error)
       }
     }
-      
-      // Perform the update (PUT) request with the updated project data
-      // Redirect to the project details page
-    //   fetch(`http://localhost:8000/projects/${id}`, {
-    //       method: "PUT",
-    //       headers: { "Content-Type": "application/json" },
-    //       body: JSON.stringify(updatedProject),
-    //     })
-    //     .then(() => {
-    //         console.log("Project updated successfully");
-    //         setIsPending(false);
-    //         navigate(`/projects/${id}`); 
-    //     })
-    //     .catch((error) => console.error("Error updating project:", error));
-    // };
     
     const handleInputChange = (e) => {
         const { name, value } = e.target;

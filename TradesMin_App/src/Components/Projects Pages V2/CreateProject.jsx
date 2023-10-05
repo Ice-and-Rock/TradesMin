@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 
-// const supabaseUrl = process.env.SUPABASE_URL
-// const supabaseKey = process.env.SUPABASE_KEY
-const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A";
 
-const CreateProject = () => {
-  const supabase = createClient(supabaseUrl, supabaseKey);
+  
+  const CreateProject = () => {
+    
+    const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+    const supabase = createClient(supabaseUrl, supabaseKey)
+    
   const [projectName, setProjectName] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Nick");

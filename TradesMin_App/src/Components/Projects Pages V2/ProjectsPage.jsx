@@ -1,6 +1,5 @@
-import React from "react";
-import useFetch from "./useFetch.jsx";
-import ProjectList from "./ProjectList.jsx";
+import useFetch from "../../hooks/useFetch.jsx";
+import ProjectList from "./ProjectList";
 import { Link } from "react-router-dom";
 
 
@@ -12,6 +11,7 @@ const ProjectsPage = () => {
     isPending,
     error,
   } = useFetch();
+
 
   return (
     <div className="flex h-full bg-gradient-to-b from-blue-100 to-blue-300">
