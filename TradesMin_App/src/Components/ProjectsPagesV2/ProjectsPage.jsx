@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
-const ProjectsPage = () => {
+export const ProjectsPage = () => {
 
   const {
     data: fetchedProjects,
@@ -52,4 +52,3 @@ const ProjectsPage = () => {
     </div>
   );
 };
-export default ProjectsPage;

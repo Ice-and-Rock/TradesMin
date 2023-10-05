@@ -10,7 +10,7 @@ import { createClient } from "@supabase/supabase-js";
  const supabase = createClient(supabaseUrl, supabaseKey)
  
  
- const ProjectDetails = () => {
+ export const ProjectDetails = () => {
   const [error, setError] = useState(null);
   const location = useLocation()
   const { project } = location.state;
@@ -163,5 +163,3 @@ import { createClient } from "@supabase/supabase-js";
     </div>
   );
 };
-
-export default ProjectDetails;

@@ -2,19 +2,15 @@ import "./index.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-
-import { Home } from "./components/Home";
+import { Home } from "@components/Home";
 import { Footer } from "./components/Footer";
-import ProjectsPage from "./components/ProjectsPagesV2/ProjectsPage"
-import CreateProject from "./components/ProjectsPagesV2/CreateProject";
-import ProjectDetails from "./components/ProjectsPagesV2/ProjectDetails";
-import NotFound from "./components/NotFound";
-import About from "./components/About";
+import { ProjectsPage } from "./components/ProjectsPagesV2/ProjectsPage";
+import { CreateProject } from "./components/ProjectsPagesV2/CreateProject";
+import { ProjectDetails } from "./components/ProjectsPagesV2/ProjectDetails";
+import { NotFound } from "./components/NotFound";
+import { About } from "./components/About";
 import { Navbar } from "./components/Navbar";
-import EditProject from "./components/ProjectsPagesV2/EditProject";
-
-
-
+import { EditProject } from "./components/ProjectsPagesV2/EditProject";
 
 const App: React.FC = () => {
   return (

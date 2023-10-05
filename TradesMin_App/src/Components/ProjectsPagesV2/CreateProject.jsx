@@ -4,7 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 
 
   
-  const CreateProject = () => {
+ export const CreateProject = () => {
     
     const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
     const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
@@ -206,5 +206,3 @@ import { createClient } from "@supabase/supabase-js";
     </div>
   );
 };
-
-export default CreateProject;

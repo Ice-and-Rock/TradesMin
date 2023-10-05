@@ -8,7 +8,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabase = createClient(supabaseUrl, supabaseKey)
  
 
-const EditProject = () => {
+export const EditProject = () => {
   const { id } = useParams(); // Get the project ID from the URL
   const [project, setProject] = useState({
     project_name: "",
@@ -169,4 +169,3 @@ const EditProject = () => {
   );
 };
 
-export default EditProject;
