@@ -1,20 +1,23 @@
-import React from "react";
-import useFetch from "./useFetch.jsx";
-import ProjectList from "./ProjectList.jsx";
+import useFetch from "../../hooks/useFetch.jsx";
+import ProjectList from "./ProjectList";
 import { Link } from "react-router-dom";
 
-const ProjectsPage = () => {
+
+
+export const ProjectsPage = () => {
+
   const {
     data: fetchedProjects,
     isPending,
     error,
-  } = useFetch("http://localhost:8000/projects");
+  } = useFetch();
+
 
   return (
-    <div className="flex h-max bg-gradient-to-b from-blue-100 to-blue-300">
+    <div className="flex h-full bg-gradient-to-b from-blue-100 to-blue-300">
       <div className="bg-blue-200 m-8 sm:p-8 shadow m-8 rounded-xl flex flex-col">
         {error && <div className="text-red-600"> {error} </div>}
-        {isPending && <div className="text-pink-500 font-bold m-2 p-2"> Waiting for data...</div>}
+        {isPending && <div className="text-pink-500 font-bold m-2 p-2"> Waiting for data... </div>}
         {fetchedProjects && (
           <div>
             <div className="flex flex-col p-2 min-w-auto">
@@ -49,4 +52,3 @@ const ProjectsPage = () => {
     </div>
   );
 };
-export default ProjectsPage;

@@ -82,3 +82,69 @@ TO DO: add this command to the dev scripts when you can 👍
             - Needs to be made conditional to see if any 'materials' exist 
         FALSE ALARM ✅
             - The previous phase data was missing the materials and author value pairs 
+
+
+## OK, now the hard part...
+### Integrate the SupaBase Backend...
+Notes:
+- initially hold the URL and key in each component to simplify things
+- 
+
+# Create a new database and table called 'projects' ✅
+Columns: 
+- id
+- project_name
+- body
+- materials (array in JSON)
+- author
+# Make an initial API fetch using the supabase: URL and Key
+Done initially to render state in ProjectsPage
+    - useFetch ✅
+        <code>
+        supabase
+        .from(projects)
+        .select() - ALL
+        .then setData(data)
+        </code>
+    - Pass state down to ProjectList as props with title ✅
+        render fetchedProjects as before using .map() and :id
+# CREATE
+Change the PUT request to an INSERT request using supabase (URL/key)
+    - fetch the data from supabase
+    - assign the new projectId to be the first part of the data array
+        ```projectId = data[0].id```
+    *Materials* ✅
+        - assign materialLogs to .map through the materials array objects
+            materialLogs = materials.map()
+        - insert materialLogs into the ('materials') column
+    - Set isPending/Navigate as before ✅
+
+# READ (ProjectDetails)
+Create a fetch request specific for the selected project's :id ❌
+    - Didn't work!
+**New approach** 
+Create a State variable in the ProjectList <Link> tags
+    - Pass this to the ProjectDetails component with ```useLocation()``` 
+    - This will use the origional useFetch ✅
+    - This will not require another server request using an ID
+    - The entire ```project``` object selected in .map() will be passed as a prop ✅
+Docs:
+https://ui.dev/react-router-pass-props-to-link
+
+# UPDATE
+
+
+# DELETE 
+Send a DELETE request to supabase client using the ```project.id``` from state object (project: )
+    - Create a function ```handleDelete``` from the delete button JSX ✅ 
+    - Must be: async, console log the deletion and use navigate() once successful ✅
+
+### .env.local file
+# create a local env file
+The API key and URL must start with VITE:
+    <code>
+    const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+    const supabase = createClient(supabaseUrl, supabaseKey)
+    </code>
+**Make sure you add the .env.local to the .gitignore file**

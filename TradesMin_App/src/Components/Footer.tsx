@@ -1,6 +1,6 @@
 
 
-export const Footer = () => {
+const Footer = () => {
     return ( 
       <footer className="felx bg-gradient-to-b from-blue-200 to-blue-800 text-center text-white">
       <div className="p-3 sm:p-9 justify-center">
@@ -92,3 +92,4 @@ export const Footer = () => {
   );
 }
 
+export default Footer

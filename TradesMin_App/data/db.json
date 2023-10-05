@@ -134,7 +134,7 @@
       "id": 11
     },
     {
-      "project_name": "Lorem ipsum",
+      "project_name": "Lorem ipsum TEST!",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       "materials": [
         {
@@ -143,10 +143,10 @@
         },
         {
           "name": "coffee wow!",
-          "quantity": 1
+          "quantity": 3
         },
         {
-          "name": "nicholas",
+          "name": "nicholas TEST",
           "quantity": 67
         },
         {
