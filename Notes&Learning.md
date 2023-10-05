@@ -139,3 +139,12 @@ Send a DELETE request to supabase client using the ```project.id``` from state o
     - Create a function ```handleDelete``` from the delete button JSX ✅ 
     - Must be: async, console log the deletion and use navigate() once successful ✅
 
+### .env.local file
+# create a local env file
+The API key and URL must start with VITE:
+    <code>
+    const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+    const supabase = createClient(supabaseUrl, supabaseKey)
+    </code>
+**Make sure you add the .env.local to the .gitignore file**
