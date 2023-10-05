@@ -2,8 +2,8 @@ import "./index.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Home } from "./components/Home"
-import { Footer } from "./components/Footer";
+import Home from "./components/Home"
+import Footer from "./components/Footer";
 import { ProjectsPage } from "./components/ProjectsPagesV2/ProjectsPage";
 import { CreateProject } from "./components/ProjectsPagesV2/CreateProject";
 import { ProjectDetails } from "./components/ProjectsPagesV2/ProjectDetails";

@@ -1,6 +1,6 @@
 import Logo from "../assets/tradesminLogo_v2.png";
 
-export const Home = () => {
+const Home = () => {
   
   return (
     <div className="flex h-max bg-blue-100">
@@ -16,3 +16,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home
