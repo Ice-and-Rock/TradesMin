@@ -31,8 +31,8 @@
     "baseUrl": "src",
     "paths": {
       // ADDED 2 below
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["pages/*"],
+      // "@components/*": ["src/components/*"],
+      
       // ABOVE
       "@headlessui/react": ["./node_modules/@headlessui/react"],
       "@heroicons/react/24/outline": ["./node_modules/@heroicons/react/outline"]
