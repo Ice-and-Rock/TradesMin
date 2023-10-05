@@ -28,7 +28,7 @@
 {
   "compilerOptions": {
     // added TailWind dependancies
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       // ADDED 2 below
       "@components/*": ["components/*"],
