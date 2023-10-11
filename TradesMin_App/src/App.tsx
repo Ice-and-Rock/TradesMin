@@ -15,9 +15,9 @@ import { EditProject } from "./Components/ProjectsPagesV2/EditProject";
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen bg-blue-200">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        <div className="flex-grow">
+        <div className="flex-grow bg-blue-200">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projectspage" element={<ProjectsPage />} />
