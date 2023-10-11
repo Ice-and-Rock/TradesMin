@@ -148,3 +148,16 @@ The API key and URL must start with VITE:
     const supabase = createClient(supabaseUrl, supabaseKey)
     </code>
 **Make sure you add the .env.local to the .gitignore file**
+**Make sure you add the environment variables to your Netlify account**
+
+## Netlify
+**Lessons learned**
+- change directory to /dist
+    - This is where the typescript compiler will put the new files
+- add a netlify.toml file
+    - this allows netlify to locate the file on the server side
+    - in mine, I've directed '/*' to be the 'index.html' root** 
+- npm run build
+    - compiles the typescript and code
+- push to repo
+- deeploy ✅ 
