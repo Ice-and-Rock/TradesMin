@@ -11,6 +11,7 @@ import { NotFound } from "./Components/NotFound";
 import { About } from "./Components/About";
 import { Navbar } from "./Components/Navigation/Navbar";
 import { EditProject } from "./Components/ProjectsPagesV2/EditProject";
+import LoginHome from "./Components/Login/LoginHome";
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,8 @@ const App: React.FC = () => {
             <Route path="/createproject" element={<CreateProject />} />
             <Route path="editproject/:id" element={<EditProject />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
+
+            <Route path="/loginhome" element={<LoginHome />} />
 
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/about" element={<About />} />
