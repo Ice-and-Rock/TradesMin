@@ -2,14 +2,14 @@ import "./index.css";
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./Components/Home"
+import Home from "./Components/Home";
 import Footer from "./Components/Footer";
 import { ProjectsPage } from "./Components/ProjectsPagesV2/ProjectsPage";
 import { CreateProject } from "./Components/ProjectsPagesV2/CreateProject";
 import { ProjectDetails } from "./Components/ProjectsPagesV2/ProjectDetails";
 import { NotFound } from "./Components/NotFound";
 import { About } from "./Components/About";
-import { Navbar } from "./Components/Navbar";
+import { Navbar } from "./Components/Navigation/Navbar";
 import { EditProject } from "./Components/ProjectsPagesV2/EditProject";
 
 const App: React.FC = () => {

@@ -1,7 +1,7 @@
 // import { useState } from "react";
 // import { Link } from "react-router-dom";
 import DropDownMobile from "./DropDownMobile";
-import LogoSmall from "../assets/tradesminLogo_small.png";
+import LogoSmall from "../../assets/tradesminLogo_small.png";
 
 // Create an interface for the Navigation
 // interface NavigationItem {
@@ -39,7 +39,9 @@ export const Navbar = () => {
       <div className="flex items-center justify-between bg-blue-200 p-2">
         <div>
           <div className="flex items-center junstify-center bg-gray-100 rounded-xl shadow-md h-10 w-12 m-1">
+            <a href="/">
             <img className="p-1 " src={LogoSmall} />
+            </a>
           </div>
         </div>
         <div>

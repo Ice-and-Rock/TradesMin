@@ -7,14 +7,14 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-const useFetch = () => {
+const useFetchProjectData = () => {
 
 
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("useFetch running 1");
+  console.log("useFetchProjectData running 1");
 
   useEffect(() => {
     const abortCont = new AbortController();
@@ -50,4 +50,4 @@ const useFetch = () => {
   return { data, isPending, error };
 };
 
-export default useFetch;
+export default useFetchProjectData;

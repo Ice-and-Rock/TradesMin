@@ -1,4 +1,4 @@
-import useFetch from "../../hooks/useFetch.jsx";
+import useFetchProjectData from "../../hooks/useFetchProjectData.js";
 import ProjectList from "./ProjectList";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ export const ProjectsPage = () => {
     data: fetchedProjects,
     isPending,
     error,
-  } = useFetch();
+  } = useFetchProjectData();
 
 
   return (

@@ -22,7 +22,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
   // const {
   //   data: project,
   //   isPending,
-  // } = useFetch(supabaseUrl, supabaseKey, {
+  // } = useFetchProjectDataProjectData(supabaseUrl, supabaseKey, {
   //   single: true, 
   //   eq: id,       
   // });
