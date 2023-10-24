@@ -58,7 +58,7 @@ export default function DropDownMobile() {
                 </div>
                 {/* REmoved for INITAL PHASE */}
                 <div>
-                  <a href="/loginhome" className="font-semibold text-gray-900">
+                  <a href="/login" className="font-semibold text-gray-900">
                     Login Page
                     <span className="absolute inset-0"></span>
                   </a>

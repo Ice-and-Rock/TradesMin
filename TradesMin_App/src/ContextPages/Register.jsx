@@ -13,6 +13,7 @@ const Register = () => {
 
   const register = (email, password) =>
     supabase.auth.signUp({ email, password });
+    
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,11 +45,12 @@ const Register = () => {
       setErrorMsg("Error in Creating Account");
     }
     setLoading(false);
+    console.log(passwordRef.current?.value)
   };
 
   return (
     <>
-      <Card>
+      <Card className="m-4">
         <Card.Body>
           <h2 className="text-center mb-4">Register</h2>
           <Form onSubmit={handleSubmit}>
