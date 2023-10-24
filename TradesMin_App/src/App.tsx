@@ -11,7 +11,7 @@ import { NotFound } from "./Components/NotFound";
 import { About } from "./Components/About";
 import { Navbar } from "./Components/Navigation/Navbar";
 import { EditProject } from "./Components/ProjectsPagesV2/EditProject";
-import LoginHome from "./Components/Login/LoginHome";
+import Register from "./ContextPages/Register";
 
 const App: React.FC = () => {
   return (
@@ -20,7 +20,9 @@ const App: React.FC = () => {
         <Navbar />
         <div className="flex-grow bg-blue-200">
           <Routes>
-            <Route path="/loginhome" element={<LoginHome />} />
+            {/* The following line is for AuthProvider */}
+            <Route path="/register" element={<Register />} />
+
             <Route path="/" element={<Home />} />
             <Route path="/projectspage" element={<ProjectsPage />} />
             <Route path="/createproject" element={<CreateProject />} />
