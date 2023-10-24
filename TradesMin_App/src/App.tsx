@@ -20,13 +20,14 @@ const App: React.FC = () => {
         <Navbar />
         <div className="flex-grow bg-blue-200">
           <Routes>
+            <Route path="/loginhome" element={<LoginHome />} />
             <Route path="/" element={<Home />} />
             <Route path="/projectspage" element={<ProjectsPage />} />
             <Route path="/createproject" element={<CreateProject />} />
             <Route path="editproject/:id" element={<EditProject />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
 
-            <Route path="/loginhome" element={<LoginHome />} />
+
 
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/about" element={<About />} />
