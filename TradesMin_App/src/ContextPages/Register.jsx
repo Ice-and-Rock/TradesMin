@@ -38,14 +38,14 @@ const Register = () => {
       );
       if (!error && data) {
         setMsg(
-          "Registration Successful. Check your email to confirm your account"
+          "Registration Successful. Check your email to confirm your account."
         );
       }
     } catch (error) {
-      setErrorMsg("Error in Creating Account");
+      setErrorMsg("Error in Creating Account. Contact Nick to find a solution");
     }
     setLoading(false);
-    console.log(passwordRef.current?.value)
+    console.log(emailRef.current?.value)
   };
 
   return (

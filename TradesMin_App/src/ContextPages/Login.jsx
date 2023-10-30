@@ -26,6 +26,7 @@ const Login = () => {
       } = await login(emailRef.current.value, passwordRef.current.value);
       if (error) setErrorMsg(error.message);
       if (user && session) navigate("/");
+      console.log({ user })
     } catch (error) {
       setErrorMsg("Email or Password Incorrect");
     }

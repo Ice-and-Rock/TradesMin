@@ -1,6 +1,6 @@
 import "./index.css";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./Components/Home";
 import Footer from "./Components/Footer";
@@ -17,21 +17,22 @@ import { Container } from "react-bootstrap";
 import HomeLoggedIn from "./ContextPages/HomeLoggedIn";
 import Login from "./ContextPages/Login";
 
-const App: React.FC = () => {
+const App = () => {
+  // :React.FC removed for jsx file
   return (
     <Container>
-    <Router>
+    
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <div className="flex-grow bg-blue-200">
           <Routes>
-            <Route path="/" element={<Home />} />
             {/* The following line is for AuthProvider */}
-            <Route path="/register" element={<Register />} />
             <Route element={<AuthRoute />}>
-              <Route path="/" element={<HomeLoggedIn />} />
+              {/* <Route path="/" element={<HomeLoggedIn />} /> */}
+              <Route path="/" element={<Home />} />
               <Route path="/homeloggedin" element={<HomeLoggedIn />} />
             </Route>
+            <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
 
             {/* <Route path="/" element={<Home />} />
@@ -48,7 +49,8 @@ const App: React.FC = () => {
         </div>
         <Footer />
       </div>
-    </Router>
+  
+    
     </Container>
   );
 };

@@ -3,8 +3,13 @@ import { useAuth } from "../Context/AuthProvider";
 
 const HomeLoggedIn = () => {
   const { user } = useAuth();
+  console.log("Home Logged in. Check ✅")
 
-  return <div>You are logged in and your email address is {user.email}</div>;
+  return (
+  <div>
+  You are logged in and your email address is {user.email}
+  </div>
+)
 };
 
 export default HomeLoggedIn;
