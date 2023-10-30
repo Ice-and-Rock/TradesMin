@@ -10,4 +10,4 @@ At the moment the useAuth works when loggin in, however it doesn't allow you to 
 - complete the LogOut function
 - conditionally render the login, register and other compoenents in the Navbar
     - IF the 'Auth' is true !
-    - {!auth && ( component ) set to false ❌ 
+    - {!auth && ( component )} set to show if false 👎 

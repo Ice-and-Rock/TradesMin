@@ -16,6 +16,7 @@ import AuthRoute from "./Context/AuthProvider";
 import { Container } from "react-bootstrap";
 import HomeLoggedIn from "./ContextPages/HomeLoggedIn";
 import Login from "./ContextPages/Login";
+import ContextNavBar from "./ContextComponents/ContextNavbar";
 
 const App = () => {
   // :React.FC removed for jsx file
@@ -24,6 +25,7 @@ const App = () => {
     
       <div className="flex flex-col min-h-screen">
         <Navbar />
+        <ContextNavBar />
         <div className="flex-grow bg-blue-200">
           <Routes>
             {/* The following line is for AuthProvider */}
