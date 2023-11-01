@@ -11,3 +11,8 @@ At the moment the useAuth works when loggin in, however it doesn't allow you to 
 - conditionally render the login, register and other compoenents in the Navbar
     - IF the 'Auth' is true !
     - {!auth && ( component )} set to show if false 👎 
+
+
+**useAuth() hook** allows you to wrap a part of the app in context to get variuous properties, instead of handing them down directly as props
+- { user } = useAuth()
+    - In a component, this will allow you to access the user object or property

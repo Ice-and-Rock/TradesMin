@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { supabase } from "../ContextSupabase/Client";
 
+// Create context then reassign it so that useAuth hook invokes the new authContext
 const AuthContext = createContext({});
-
 export const useAuth = () => useContext(AuthContext);
 
 const login = (email, password) =>
@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
   console.log("AuthProvider running")
 
   useEffect(() => {
-    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data } = supabase.auth.onAuthStateChange(async (event, session) => {
       if (event === "SIGNED_IN") {
         setUser(session.user);
         setAuth(true);
@@ -31,11 +31,11 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  console.log("Auth Status:", auth)
+  console.log("AuthProvider auth State:", auth)
   console.log("User:", user)
 
   return (
-    <AuthContext.Provider value={{ user, login, signOut }}>
+    <AuthContext.Provider value={{ auth, user, login, signOut }}>
       {children}
     </AuthContext.Provider>
   );

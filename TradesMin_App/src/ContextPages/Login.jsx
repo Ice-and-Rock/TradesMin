@@ -25,8 +25,8 @@ const Login = () => {
         error
       } = await login(emailRef.current.value, passwordRef.current.value);
       if (error) setErrorMsg(error.message);
-      if (user && session) navigate("/");
-      console.log({ user })
+      if (user && session) navigate("/homeloggedin");
+      
     } catch (error) {
       setErrorMsg("Email or Password Incorrect");
     }
@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <>
-      <Card>
+      <Card className="m-4">
         <Card.Body>
           <h2 className="text-center mb-4">Login</h2>
           <Form onSubmit={handleSubmit}>

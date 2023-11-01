@@ -32,16 +32,18 @@ const App = () => {
             <Route element={<AuthRoute />}>
               {/* <Route path="/" element={<HomeLoggedIn />} /> */}
               <Route path="/" element={<Home />} />
-              <Route path="/homeloggedin" element={<HomeLoggedIn />} />
             </Route>
+              <Route path="/homeloggedin" element={<HomeLoggedIn />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
 
-            {/* <Route path="/" element={<Home />} />
+            {/* 
+            <Route path="/" element={<Home />} />
             <Route path="/projectspage" element={<ProjectsPage />} />
             <Route path="/createproject" element={<CreateProject />} />
             <Route path="editproject/:id" element={<EditProject />} />
-            <Route path="/projects/:id" element={<ProjectDetails />} /> */}
+            <Route path="/projects/:id" element={<ProjectDetails />} /> 
+            */}
 
 
 
