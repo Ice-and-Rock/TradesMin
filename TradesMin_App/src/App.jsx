@@ -12,7 +12,7 @@ import { NotFound } from "./Components/NotFound";
 import { About } from "./Components/About";
 import { Navbar } from "./Components/Navigation/Navbar";
 import Register from "./ContextPages/Register";
-import AuthRoute from "./Context/AuthProvider";
+import AuthRoute from "./ContextComponents/AuthRoute";
 import { Container } from "react-bootstrap";
 import HomeLoggedIn from "./ContextPages/HomeLoggedIn";
 import Login from "./ContextPages/Login";
