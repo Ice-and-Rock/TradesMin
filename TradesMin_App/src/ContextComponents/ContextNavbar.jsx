@@ -10,6 +10,7 @@ const ContextNavBar = () => {
 
   const handleLogout = async (e) => {
     e.preventDefault();
+    console.log("logout running")
     try {
       const { error } = await signOut();
       console.log(error);
@@ -18,13 +19,15 @@ const ContextNavBar = () => {
     }
   };
 
+  console.log("Navbar Auth Test", )
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand>UserAuth</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
+          <Nav className="sm-auto">
             {!auth && (
               <Nav.Link as={Link} to="/login">
                 Login
@@ -48,7 +51,7 @@ const ContextNavBar = () => {
               </Nav.Link>
             )}
           </Nav>
-        </Navbar.Collapse>
+        {/* </Navbar.Collapse> */}
       </Container>
     </Navbar>
   );

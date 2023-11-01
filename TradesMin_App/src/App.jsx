@@ -25,8 +25,8 @@ const App = () => {
     
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <ContextNavBar />
         <div className="flex-grow bg-blue-200">
+        <ContextNavBar />
           <Routes>
             {/* The following line is for AuthProvider */}
             <Route element={<AuthRoute />}>
