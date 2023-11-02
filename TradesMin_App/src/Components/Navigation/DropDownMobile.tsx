@@ -1,7 +1,9 @@
+import { useAuth } from "../../Context/AuthProvider";
 import { useState } from "react";
 
 export default function DropDownMobile() {
   const [dropDownMobileOpen, setDropDownMobileOpen] = useState(false);
+  const { auth, signOut } = useAuth();
 
   const toggleMenu = () => {
     setDropDownMobileOpen(!dropDownMobileOpen);
@@ -36,7 +38,9 @@ export default function DropDownMobile() {
         <div className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-max -translate-x-1/2 px-4">
           <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-blue-200 text-sm leading-6 shadow-xl ring-1 ring-gray-900/5">
             <div className="p-4">
-              <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-pink-200">
+              {/* NAV ITEM */}
+              {!auth && (
+                <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-pink-200">
                 <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-blue-200">
                   <svg
                     className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -45,18 +49,14 @@ export default function DropDownMobile() {
                     strokeWidth="1.5"
                     stroke="currentColor"
                     aria-hidden="true"
-                  >
+                    >
                     <path
-                     strokeLinecap="round"
-                     strokeLinejoin="round"
-                     d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
-                   />
-                   
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"
+                      />
                   </svg>
-                  {/*  */}
-               
                 </div>
-                {/* REmoved for INITAL PHASE */}
                 <div>
                   <a href="/login" className="font-semibold text-gray-900">
                     Login Page
@@ -67,7 +67,10 @@ export default function DropDownMobile() {
                   </p>
                 </div>
               </div>
-              <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+                )}
+              {/* NAV ITEM */}
+              {auth && (
+                <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
                 <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                   <svg
                     className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -76,16 +79,19 @@ export default function DropDownMobile() {
                     strokeWidth="1.5"
                     stroke="currentColor"
                     aria-hidden="true"
-                  >
+                    >
                     <path
-                     strokeLinecap="round"
-                     strokeLinejoin="round"
-                     d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
-                   />
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
+                      />
                   </svg>
                 </div>
                 <div>
-                  <a href="/projectspage" className="font-semibold text-gray-900">
+                  <a
+                    href="/projectspage"
+                    className="font-semibold text-gray-900"
+                    >
                     Projects
                     <span className="absolute inset-0"></span>
                   </a>
@@ -94,11 +100,13 @@ export default function DropDownMobile() {
                   </p>
                 </div>
               </div>
+              )}
+              {/* NAV ITEM */}
 
               {/* Commented out from here */}
 
               {/* <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
-                <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+              <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                   <svg
                     className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
                     fill="none"
@@ -156,15 +164,15 @@ export default function DropDownMobile() {
                 </div>
               </div> */}
 
-                {/* TO HERE */}
-                
+              {/* TO HERE */}
             </div>
             <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+              {/* Home button for the Mobile DD menu */}
+            {!auth && (
               <a
                 href="/"
                 className="bg-gradient-to-b from-pink-100 to-pink-200  flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
               >
-                {/* Home button for the Mobile DD menu */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -177,8 +185,29 @@ export default function DropDownMobile() {
                 </svg>
                 Home
               </a>
+            )}
+              {/* User homepage button for DD menu */}
+              {auth && (
               <a
-                href="/notfound"
+                href="/homeloggedin"
+                className="bg-gradient-to-b from-pink-100 to-pink-200  flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5 flex-none text-gray-400"
+                  aria-hidden="true"
+                >
+                  <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
+                  <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                </svg>
+                User Homepage
+              </a>
+              )}
+              {/* Contact me button for DD menu */}
+              <a
+                href="/about"
                 className="bg-gradient-to-b from-pink-100 to-pink-200  flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
               >
                 <svg
