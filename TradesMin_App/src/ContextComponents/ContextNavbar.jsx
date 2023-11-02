@@ -27,7 +27,7 @@ const ContextNavBar = () => {
       <Container>
         <Navbar.Brand>Authorisation Checks ✅</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="md-auto">
             {!auth && (
               <Nav.Link as={Link} to="/hometemp">
@@ -60,7 +60,7 @@ const ContextNavBar = () => {
               </Nav.Link>
             )}
           </Nav>
-        {/* </Navbar.Collapse> */}
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
