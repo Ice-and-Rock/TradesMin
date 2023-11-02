@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../Context/AuthProvider";
 
 const ContextNavBar = () => {
@@ -13,7 +13,7 @@ const ContextNavBar = () => {
     console.log("logout running")
     try {
       const { error } = await signOut();
-      Navigate('/login')
+      
       console.log(error);
     } catch (error) {
       console.log(error);
@@ -25,10 +25,15 @@ const ContextNavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>UserAuth</Navbar.Brand>
+        <Navbar.Brand>Authorisation Checks ✅</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
           <Nav className="md-auto">
+            {!auth && (
+              <Nav.Link as={Link} to="/hometemp">
+                Home
+              </Nav.Link>
+            )}
             {!auth && (
               <Nav.Link as={Link} to="/login">
                 Login
@@ -41,18 +46,16 @@ const ContextNavBar = () => {
             )}
             {auth && (
               <Nav.Link as={Link} to="/homeloggedin">
-                Homeloggedin
+                User HomePage
               </Nav.Link>
             )}
-            {auth && (
-              <Nav.Link as={Link} to="/">
-                Home
+          <Nav.Link as={Link} to="/about">
+                About
               </Nav.Link>
-            )}
           </Nav>
           <Nav>
             {auth && (
-              <Nav.Link as={Button} onClick={handleLogout} >
+              <Nav.Link as={Button} onClick={handleLogout} href="/login">
                 LogOut
               </Nav.Link>
             )}

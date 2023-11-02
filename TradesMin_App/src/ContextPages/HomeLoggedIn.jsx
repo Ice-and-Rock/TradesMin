@@ -1,4 +1,5 @@
 import React from "react";
+import { Card } from "react-bootstrap";
 import { useAuth } from "../Context/AuthProvider";
 
 const HomeLoggedIn = () => {
@@ -6,9 +7,12 @@ const HomeLoggedIn = () => {
   console.log("Home Logged in. Check ✅")
 
   return (
-  <div>
-  You are logged in and your email address is {user.email}
-  </div>
+  <Card className="m-4">
+    <Card.Body>
+    You are logged in and your email address is {user.email}
+    </Card.Body>
+  </Card>
+  
 )
 };
 

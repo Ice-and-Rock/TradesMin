@@ -1,11 +1,13 @@
 import useFetchProjectData from "../../hooks/useFetchProjectData.js";
 import ProjectList from "./ProjectList";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/AuthProvider";
 
 
 
 export const ProjectsPage = () => {
 
+  const { user } = useAuth();
   const {
     data: fetchedProjects,
     isPending,
