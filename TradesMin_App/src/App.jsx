@@ -10,10 +10,10 @@ import { ProjectDetails } from "./Components/ProjectsPagesV2/ProjectDetails";
 import { EditProject } from "./Components/ProjectsPagesV2/EditProject";
 import { NotFound } from "./Components/NotFound";
 import { About } from "./Components/About";
-import { Navbar } from "./Components/Navigation/Navbar";
+// import { Navbar } from "./Components/Navigation/Navbar";
+// import { Container } from "react-bootstrap";
 import Register from "./ContextPages/Register";
 import AuthRoute from "./ContextComponents/AuthRoute";
-import { Container } from "react-bootstrap";
 import HomeLoggedIn from "./ContextPages/HomeLoggedIn";
 import Login from "./ContextPages/Login";
 import ContextNavBar from "./ContextComponents/ContextNavbar";
@@ -23,9 +23,9 @@ import HomeTemp from "./ContextPages/HomeTemp";
 const App = () => {
   // :React.FC removed for jsx file
   return (
-    <Container>
+    <div>
       <div className="flex flex-col min-h-screen">
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="flex-grow bg-blue-200">
           <ContextNavBar />
           <Routes>
@@ -51,15 +51,9 @@ const App = () => {
         </div>
         <Footer />
       </div>
-    </Container>
+    </div>
   );
 };
 
 export default App;
 
-// <div className="">
-//   <div className="">TradesMin App</div>
-//   <div className="">Please enter Password to continue...</div>
-//   <textarea placeholder='Password goes here...'></textarea>
-
-// </div>

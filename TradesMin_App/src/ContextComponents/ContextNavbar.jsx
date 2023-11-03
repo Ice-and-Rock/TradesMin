@@ -10,24 +10,24 @@ const ContextNavBar = () => {
 
   const handleLogout = async (e) => {
     e.preventDefault();
-    console.log("logout running")
+    console.log("logout running");
     try {
       const { error } = await signOut();
-      
+
       console.log(error);
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log("Navbar Auth Test:", auth)
+  console.log("Navbar Auth Test:", auth);
 
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand>Authorisation Checks ✅</Navbar.Brand>
+        <Navbar.Brand>TradesMin</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" style={{ visibility: "visible" }}>
           <Nav className="md-auto">
             {!auth && (
               <Nav.Link as={Link} to="/hometemp">
@@ -49,9 +49,9 @@ const ContextNavBar = () => {
                 User HomePage
               </Nav.Link>
             )}
-          <Nav.Link as={Link} to="/about">
-                About
-              </Nav.Link>
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
           </Nav>
           <Nav>
             {auth && (
