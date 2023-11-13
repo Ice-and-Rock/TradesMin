@@ -9,7 +9,13 @@ const HomeLoggedIn = () => {
   return (
   <Card className="m-4">
     <Card.Body>
-    You are logged in and your email address is {user.email}
+    Welcome back {user.email}!
+    </Card.Body>
+    <Card.Body>
+    You are LOGGED IN and you were last here on:
+    </Card.Body>
+    <Card.Body>
+    {user.last_sign_in_at}
     </Card.Body>
   </Card>
   

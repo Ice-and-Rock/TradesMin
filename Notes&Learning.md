@@ -161,3 +161,31 @@ The API key and URL must start with VITE:
     - compiles the typescript and code
 - push to repo
 - deeploy ✅ 
+
+## Once useAuth is complete 🚀 
+So, useAuth is complete, which means there is a seperate Navbar that allows users to navigate to the components in the <AuthRoute/> element 
+- add the ProjectsPage(s) to the AuthRoutes ✅
+- add conditional rendering to the DD menu ✅
+    - import useAuth and {auth} ✅
+    - have the menu items render on {auth} 
+        - Login -> Projects, Home -> User Homepage 
+    ❗️  *** THE ABOVE IS NOW REDUNDANT *** ❗️
+    - Using <b>Bootstrap</b> components is easier at this stage.
+        - My custom DD menu doesn't transition 
+        - the DD menu also stays when a user makes a selection
+    - Shame to have spent so many hours buidling the DD menu, but hey ho!
+
+## Enable row access policies for the database
+Write a policy to allow access to rows using email address ✅
+    - READ policy accepts 'authenticated'
+
+Hard parts: 
+- emable update auth: NEed to include email address 
+
+## Migrate the API and interations to a server 
+
+
+# Eventually...
+- Fix the 'visability' bug relating to the Navbar when a user selects a Link
+- remove the GoTrueClient erors
+    - only call supabase createClient once to access the data

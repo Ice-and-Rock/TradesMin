@@ -31,8 +31,12 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  // Check if there is a user + print email
   console.log("AuthProvider auth State:", auth)
-  console.log("User:", user)
+  if (user) {
+    console.log("User:", user.email,
+    "User status:", user.role )
+  }
 
   return (
     <AuthContext.Provider value={{ auth, user, login, signOut }}>
