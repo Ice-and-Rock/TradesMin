@@ -86,77 +86,74 @@ TO DO: add this command to the dev scripts when you can 👍
 
 ## OK, now the hard part...
 ### Integrate the SupaBase Backend...
-Notes:
-- initially hold the URL and key in each component to simplify things
-- 
+    Notes:
+    - initially hold the URL and key in each component to simplify things
+    - 
 
 ## Create a new database and table called 'projects' ✅
-Columns: 
-- id
-- project_name
-- body
-- materials (array in JSON)
-- author
+    Columns: 
+    - id
+    - project_name
+    - body
+    - materials (array in JSON)
+    - author
 ## Make an initial API fetch using the supabase: URL and Key
-Done initially to render state in ProjectsPage
-    - useFetch ✅
-        <code>
-        supabase
-        .from(projects)
-        .select() - ALL
-        .then setData(data)
-        </code>
-    - Pass state down to ProjectList as props with title ✅
-        render fetchedProjects as before using .map() and :id
-        
+    Done initially to render state in ProjectsPage
+        - useFetch ✅
+            <code>
+            supabase
+            .from(projects)
+            .select() - ALL
+            .then setData(data)
+            </code>
+        - Pass state down to ProjectList as props with title ✅
+            render fetchedProjects as before using .map() and :id
+
 ## CREATE
-Change the PUT request to an INSERT request using supabase (URL/key)
-    - fetch the data from supabase
-    - assign the new projectId to be the first part of the data array
-        ```projectId = data[0].id```
-    *Materials* ✅
-        - assign materialLogs to .map through the materials array objects
-            materialLogs = materials.map()
-        - insert materialLogs into the ('materials') column
-    - Set isPending/Navigate as before ✅
-# READ (ProjectDetails)
+    Change the PUT request to an INSERT request using supabase (URL/key)
+        - fetch the data from supabase
+        - assign the new projectId to be the first part of the data array
+            ```projectId = data[0].id```
+        *Materials* ✅
+            - assign materialLogs to .map through the materials array objects
+                materialLogs = materials.map()
+            - insert materialLogs into the ('materials') column
+        - Set isPending/Navigate as before ✅
 
-Create a fetch request specific for the selected project's :id ❌
-    - Didn't work!
-**New approach** 
-Create a State variable in the ProjectList <Link> tags
-    - Pass this to the ProjectDetails component with ```useLocation()``` 
-    - This will use the origional useFetch ✅
-    - This will not require another server request using an ID
-    - The entire ```project``` object selected in .map() will be passed as a prop ✅
-Docs:
-https://ui.dev/react-router-pass-props-to-link
-
-
-
+## READ (ProjectDetails)
+    Create a fetch request specific for the selected project's :id ❌
+        - Didn't work!
+    **New approach** 
+    Create a State variable in the ProjectList <Link> tags
+        - Pass this to the ProjectDetails component with ```useLocation()``` 
+        - This will use the origional useFetch ✅
+        - This will not require another server request using an ID
+        - The entire ```project``` object selected in .map() will be passed as a prop ✅
+    Docs:
+    https://ui.dev/react-router-pass-props-to-link
 
 
 ## UPDATE
-Send an UPDATE request to supabase client using the ```project.id``` from state object (project: )
-    - create the state in which to store the project data
-    - fetch the data to populate the state(data)
-Create an async function **handleSubmit()**
-    - preventDefault() to stop the page re-loading at each interaction
-    - Create new variable object for updatedFields{}
-        pass these to the input fields using **name=** to identify them
-    - create a **try{ }** that awaits supabase to catch any errors 
-        use **eq("id", id)** to match the id numbers for the update request
-Create **handleInputChange** function
-    - This will update the setProjectSelection state
-        - using a spread operator **'...project'** 
-        - when the **[name]: value** for each input changes
-Create **handleMaterialChange** function
-    - Similar to above, but it must:
-        - take in an **event** and **index**
-        - use [...spread operator] to set **updatedMaterials** state
-        - set updatedMaterials **name: "quantity"** from the materials array to be an integer
-    - setEditedMaterials to be (updatedMaterials) 
-Hand all of the values from the data into the **'input'** fields and allow the functions to update states
+    Send an UPDATE request to supabase client using the ```project.id``` from state object (project: )
+        - create the state in which to store the project data
+        - fetch the data to populate the state(data)
+    Create an async function **handleSubmit()**
+        - preventDefault() to stop the page re-loading at each interaction
+        - Create new variable object for updatedFields{}
+            pass these to the input fields using **name=** to identify them
+        - create a **try{ }** that awaits supabase to catch any errors 
+            use **eq("id", id)** to match the id numbers for the update request
+    Create **handleInputChange** function
+        - This will update the setProjectSelection state
+            - using a spread operator **'...project'** 
+            - when the **[name]: value** for each input changes
+    Create **handleMaterialChange** function
+        - Similar to above, but it must:
+            - take in an **event** and **index**
+            - use [...spread operator] to set **updatedMaterials** state
+            - set updatedMaterials **name: "quantity"** from the materials array to be an integer
+        - setEditedMaterials to be (updatedMaterials) 
+    Hand all of the values from the data into the **'input'** fields and allow the functions to update states
 
 ## DELETE 
 Send a DELETE request to supabase client using the ```project.id``` from state object (project: )
