@@ -118,7 +118,7 @@ Change the PUT request to an INSERT request using supabase (URL/key)
             materialLogs = materials.map()
         - insert materialLogs into the ('materials') column
     - Set isPending/Navigate as before ✅
-
+<details>
 # READ (ProjectDetails)
 Create a fetch request specific for the selected project's :id ❌
     - Didn't work!
@@ -130,14 +130,49 @@ Create a State variable in the ProjectList <Link> tags
     - The entire ```project``` object selected in .map() will be passed as a prop ✅
 Docs:
 https://ui.dev/react-router-pass-props-to-link
+</details>
+
+
+<hr>
 
 # UPDATE
-
+Send an UPDATE request to supabase client using the ```project.id``` from state object (project: )
+    - create the state in which to store the project data
+    - fetch the data to populate the state(data)
+Create an async function **handleSubmit()**
+    - preventDefault() to stop the page re-loading at each interaction
+    - Create new variable object for updatedFields{}
+        pass these to the input fields using **name=** to identify them
+    - create a **try{ }** that awaits supabase to catch any errors 
+        use **eq("id", id)** to match the id numbers for the update request
+Create **handleInputChange** function
+    - This will update the setProjectSelection state
+        - using a spread operator **'...project'** 
+        - when the **[name]: value** for each input changes
+Create **handleMaterialChange** function
+    - Similar to above, but it must:
+        - take in an **event** and **index**
+        - use [...spread operator] to set **updatedMaterials** state
+        - set updatedMaterials **name: "quantity"** from the materials array to be an integer
+    - setEditedMaterials to be (updatedMaterials) 
+Hand all of the values from the data into the **'input'** fields and allow the functions to update states
 
 # DELETE 
 Send a DELETE request to supabase client using the ```project.id``` from state object (project: )
     - Create a function ```handleDelete``` from the delete button JSX ✅ 
     - Must be: async, console log the deletion and use navigate() once successful ✅
+
+<br> </br>
+
+**CRUD Changes**
+# The above CRUD requires change
+## To reduce the Supabase Client calls the following must happen:
+- Pass { props } to ProjectDetails
+    - Separate Async function: handleDelete()
+- Pass { props } to EditProject
+    - Separate Async function: handleSubmit() 
+
+
 
 ### .env.local file
 # create a local env file
@@ -180,7 +215,7 @@ Write a policy to allow access to rows using email address ✅
     - READ policy accepts 'authenticated'
 
 Hard parts: 
-- emable update auth: NEed to include email address 
+- Enable update auth: Need to include email address 
 
 ## Migrate the API and interations to a server 
 
