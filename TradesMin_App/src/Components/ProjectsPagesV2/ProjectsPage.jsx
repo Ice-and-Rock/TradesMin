@@ -12,7 +12,7 @@ export const ProjectsPage = () => {
 
   return (
     <div className="flex h-full bg-gradient-to-b from-blue-100 to-blue-300">
-      <div className="bg-blue-200 m-4 sm:p-4 shadow m-4 rounded-xl flex flex-col">
+      <div className="bg-gray-200 m-4 sm:p-4 shadow m-4 rounded-xl flex flex-col">
         {error && <div className="text-red-600"> {error} </div>}
         {isPending && <div className="text-pink-500 font-bold m-2 p-2"> Waiting for data... </div>}
         {fetchedProjects && (

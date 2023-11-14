@@ -5,6 +5,7 @@ const CreateButton = () => {
     <Link
       to="/createproject"
       className="flex flex-row bg-gradient-to-t from-pink-500 to-pink-400 text-white py-2 px-4 m-4 rounded-full shadow-xl hover:bg-pink-700"
+      style={{ textDecoration: "none", cursor: "pointer" }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
