@@ -108,7 +108,7 @@ TO DO: add this command to the dev scripts when you can 👍
             </code>
         - Pass state down to ProjectList as props with title ✅
             render fetchedProjects as before using .map() and :id
-
+<hr>
 ## CREATE
     Change the PUT request to an INSERT request using supabase (URL/key)
         - fetch the data from supabase
@@ -131,7 +131,6 @@ TO DO: add this command to the dev scripts when you can 👍
         - The entire ```project``` object selected in .map() will be passed as a prop ✅
     Docs:
     https://ui.dev/react-router-pass-props-to-link
-
 
 ## UPDATE
     Send an UPDATE request to supabase client using the ```project.id``` from state object (project: )
@@ -156,14 +155,14 @@ TO DO: add this command to the dev scripts when you can 👍
     Hand all of the values from the data into the **'input'** fields and allow the functions to update states
 
 ## DELETE 
-Send a DELETE request to supabase client using the ```project.id``` from state object (project: )
-    - Create a function ```handleDelete``` from the delete button JSX ✅ 
-    - Must be: async, console log the deletion and use navigate() once successful ✅
+    Send a DELETE request to supabase client using the ```project.id``` from state object (project: )
+        - Create a function ```handleDelete``` from the delete button JSX ✅ 
+        - Must be: async, console log the deletion and use navigate() once successful ✅
 
-<br> </br>
+</hr>
 
 **CRUD Changes !!!**
-# The above CRUD requires change
+# The above CRUD requires change **
 ## To reduce the Supabase Client calls the following must happen:
 - Pass { props } to ProjectDetails
     - Separate Async function: handleDelete()
