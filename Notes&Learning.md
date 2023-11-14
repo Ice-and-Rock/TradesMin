@@ -109,6 +109,7 @@ TO DO: add this command to the dev scripts when you can 👍
         - Pass state down to ProjectList as props with title ✅
             render fetchedProjects as before using .map() and :id
 <hr>
+
 ## CREATE
     Change the PUT request to an INSERT request using supabase (URL/key)
         - fetch the data from supabase
