@@ -98,16 +98,16 @@ TO DO: add this command to the dev scripts when you can 👍
     - materials (array in JSON)
     - author
 ## Make an initial API fetch using the supabase: URL and Key
-    Done initially to render state in ProjectsPage
-        - useFetch ✅
-            <code>
-            supabase
-            .from(projects)
-            .select() - ALL
-            .then setData(data)
-            </code>
-        - Pass state down to ProjectList as props with title ✅
-            render fetchedProjects as before using .map() and :id
+Done initially to render state in ProjectsPage
+    - useFetch ✅
+        <code>
+        supabase
+        .from(projects)
+        .select() - ALL
+        .then setData(data)
+        </code>
+    - Pass state down to ProjectList as props with title ✅
+        render fetchedProjects as before using .map() and :id
 <hr>
 
 ## CREATE
