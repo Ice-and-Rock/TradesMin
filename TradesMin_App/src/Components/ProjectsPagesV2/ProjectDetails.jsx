@@ -5,12 +5,10 @@ import { createClient } from "@supabase/supabase-js";
 
 
  // API --------------------------------------------------------------------------------------------
-//  const supabaseUrl = "https://iwyynoynwztsnevhxxgt.supabase.co"
-//  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml3eXlub3lud3p0c25ldmh4eGd0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTU4MDkxNzYsImV4cCI6MjAxMTM4NTE3Nn0.nb2hssHye9NXWYzwszwzj0LgRlSHxXliN2dJYDKi-5A"
-//  const supabase = createClient(supabaseUrl, supabaseKey)
 const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabase = createClient(supabaseUrl, supabaseKey)
+// Above is for the DELETE method
  
  export const ProjectDetails = () => {
   const [error, setError] = useState(null);
@@ -18,37 +16,6 @@ const supabase = createClient(supabaseUrl, supabaseKey)
   const { project } = location.state;
   
   console.log("selectedProject:", project)
-
-  // const {
-  //   data: project,
-  //   isPending,
-  // } = useFetchProjectDataProjectData(supabaseUrl, supabaseKey, {
-  //   single: true, 
-  //   eq: id,       
-  // });
-
-  // useEffect(() => {
-  //   const fetchProject = async () => {
-  //     try {
-  //       const { data, error } = await supabase
-  //       .from('projects')
-  //       .select()
-  //       .eq('id', `${projectId}`) 
-  //       .single();
-  //         if (error) {
-  //             throw error;
-  //           }
-  //           setProject(data);
-  //           setIsPending(false);
-  //         } catch (error) {
-  //           setError(error.message);
-  //           setIsPending(false);
-  //         }
-  //       };
-
-  //       fetchProject()
-  //     }, [projectId])
-
 
   const navigate = useNavigate();
 
@@ -102,7 +69,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
             </div>
 
             <div className="flex justify-between p-3">
-              <Link to={`/editproject/${project.id}`} className="flex bg-pink-500 text-white px-3 py-1 rounded-full mt-auto mr-auto max-w-[150px] shadow-md hover:bg-red-700">
+              <Link to={`/editproject/${project.id}`} state={{ project: project }} className="flex bg-pink-500 text-white px-3 py-1 rounded-full mt-auto mr-auto max-w-[150px] shadow-md hover:bg-red-700">
                 <div className="flex direction-row align-center items-center justify-center">
                   <div>
                     <svg
