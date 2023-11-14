@@ -119,18 +119,18 @@ Change the PUT request to an INSERT request using supabase (URL/key)
         - insert materialLogs into the ('materials') column
     - Set isPending/Navigate as before ✅
 # READ (ProjectDetails)
-<details>
-Create a fetch request specific for the selected project's :id ❌
-    - Didn't work!
-**New approach** 
-Create a State variable in the ProjectList <Link> tags
-    - Pass this to the ProjectDetails component with ```useLocation()``` 
-    - This will use the origional useFetch ✅
-    - This will not require another server request using an ID
-    - The entire ```project``` object selected in .map() will be passed as a prop ✅
-Docs:
-https://ui.dev/react-router-pass-props-to-link
-</details>
+
+>Create a fetch request specific for the selected project's :id ❌
+>    - Didn't work!
+>**New approach** 
+>Create a State variable in the ProjectList <Link> tags
+>    - Pass this to the ProjectDetails component with ```useLocation()``` 
+>    - This will use the origional useFetch ✅
+>    - This will not require another server request using an ID
+>    - The entire ```project``` object selected in .map() will be passed as a prop ✅
+>Docs:
+>https://ui.dev/react-router-pass-props-to-link
+
 
 
 <hr>
