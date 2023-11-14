@@ -133,7 +133,7 @@ Change the PUT request to an INSERT request using supabase (URL/key)
 
 
 
-<hr>
+
 
 ## UPDATE
 Send an UPDATE request to supabase client using the ```project.id``` from state object (project: )
