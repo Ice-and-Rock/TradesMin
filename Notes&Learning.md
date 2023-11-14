@@ -35,29 +35,29 @@ TO DO: add this command to the dev scripts when you can 👍
 # Components:
     ProjectsPage - useFetch - ProjectList - ProjectDetails(Edit/Delete)
     ProjectsPage - CreateProject 
-# Write a ProjectsPage component ✅
+## Write a ProjectsPage component ✅
     call useFetch
     render ProjectList
     render NewProject
-# Write a useFetch component to retreive the data ✅
+## Write a useFetch component to retreive the data ✅
     States:
     - projectData
     - pending
     - error
-# Write a ProjectsList component to render the list ✅
+## Write a ProjectsList component to render the list ✅
     props: fetchedProjects
     Issues:
         - DDMenuMobile had an error for Link. Fixed ✅
         - Component were changed to JSX due to HTML elements ✅
             - Caused by conditional rendering for ```error``` and ```isPending```
         - reverse the order of the list using ```.reverse()```, newest first ✅
-# Write a ProjectDetails component to render a specific project ✅
+## Write a ProjectDetails component to render a specific project ✅
     Issues:
         - Forgot to call ```useParams()``` and ```Navigate()``` to import the dynamic ```{ id }``` - silly me!
     - Must include Update/delete
         - handleDelete: onClick prompt to double check
         - pass dynamic value to the prompt using $ and `backticks` 
-# Write a CreateProject component to add data to the data.json file ✅
+## Write a CreateProject component to add data to the data.json file ✅
     Include ```e.preventDefault()```
         - stops the DOM from re-rendering for every interaction 
     Fetch then POST using ```JSON.stringify```
@@ -65,8 +65,8 @@ TO DO: add this command to the dev scripts when you can 👍
 
 
 ### Well done, it works! Next phase...
-## Make the data more complicated
-# add 'materials[{name + quantity}]' to the data object 
+# Make the data more complicated
+## Add 'materials[{name + quantity}]' to the data object 
     At the moment both title and body are saved in state
     - Change the state to ```{ project_name, body, materials[] }``` ❌ ...didnt work
     - Add another input field with: ```type, name, value and onChange``` ❌...didnt work
@@ -90,14 +90,14 @@ Notes:
 - initially hold the URL and key in each component to simplify things
 - 
 
-# Create a new database and table called 'projects' ✅
+## Create a new database and table called 'projects' ✅
 Columns: 
 - id
 - project_name
 - body
 - materials (array in JSON)
 - author
-# Make an initial API fetch using the supabase: URL and Key
+## Make an initial API fetch using the supabase: URL and Key
 Done initially to render state in ProjectsPage
     - useFetch ✅
         <code>
@@ -108,7 +108,7 @@ Done initially to render state in ProjectsPage
         </code>
     - Pass state down to ProjectList as props with title ✅
         render fetchedProjects as before using .map() and :id
-# CREATE
+## CREATE
 Change the PUT request to an INSERT request using supabase (URL/key)
     - fetch the data from supabase
     - assign the new projectId to be the first part of the data array
@@ -118,8 +118,8 @@ Change the PUT request to an INSERT request using supabase (URL/key)
             materialLogs = materials.map()
         - insert materialLogs into the ('materials') column
     - Set isPending/Navigate as before ✅
-<details>
 # READ (ProjectDetails)
+<details>
 Create a fetch request specific for the selected project's :id ❌
     - Didn't work!
 **New approach** 
@@ -135,7 +135,7 @@ https://ui.dev/react-router-pass-props-to-link
 
 <hr>
 
-# UPDATE
+## UPDATE
 Send an UPDATE request to supabase client using the ```project.id``` from state object (project: )
     - create the state in which to store the project data
     - fetch the data to populate the state(data)
@@ -157,14 +157,14 @@ Create **handleMaterialChange** function
     - setEditedMaterials to be (updatedMaterials) 
 Hand all of the values from the data into the **'input'** fields and allow the functions to update states
 
-# DELETE 
+## DELETE 
 Send a DELETE request to supabase client using the ```project.id``` from state object (project: )
     - Create a function ```handleDelete``` from the delete button JSX ✅ 
     - Must be: async, console log the deletion and use navigate() once successful ✅
 
 <br> </br>
 
-**CRUD Changes**
+**CRUD Changes !!!**
 # The above CRUD requires change
 ## To reduce the Supabase Client calls the following must happen:
 - Pass { props } to ProjectDetails
