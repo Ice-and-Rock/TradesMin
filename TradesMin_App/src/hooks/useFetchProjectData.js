@@ -1,14 +1,7 @@
 import { useState, useEffect } from "react";
-
-import { createClient } from '@supabase/supabase-js'
-
-
-const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabase = createClient(supabaseUrl, supabaseKey)
+import { supabase } from '../ContextSupabase/Client.jsx'
 
 const useFetchProjectData = () => {
-
 
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
@@ -45,7 +38,7 @@ const useFetchProjectData = () => {
     }, 500);
 
     return () => abortCont.abort();
-  }, [supabaseUrl, supabaseKey]);
+  }, []);
 
   return { data, isPending, error };
 };

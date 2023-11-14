@@ -1,12 +1,18 @@
+import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export const About = () => {
     return ( 
-        <div className="about">
-            <h2>Hey, I'm Nick</h2>
-            <p>I built this project using React,Typescript, Tailwind and variou sother open source libraries</p>
+        <Card className="m-4">
+            <Card.Title>
+            <h2>Welcome new user!</h2>
+            </Card.Title>
+            <Card.Body>
+            <h2> My name is Nick,</h2>
+            <p>I built this project using React,Typescript, Tailwind, Bootstrap and various other open source libraries</p>
             <Link to="/">Back to the homepage...</Link>
-        </div>
+            </Card.Body>
+        </Card>
      );
 }
  
