@@ -1,5 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
-import DeleteButton from "./EditButtons/DeleteButton";
+import { useLocation } from "react-router-dom";
+import DeleteButton from "./EditButtons/DeleteButton.jsx";
+import EditButton from "./EditButtons/EditButton.jsx";
 
  export const ProjectDetails = () => {
   
@@ -7,8 +8,6 @@ import DeleteButton from "./EditButtons/DeleteButton";
   // const [error, setError] = useState(null);
   const location = useLocation()
   const { project } = location.state;
-  
-  console.log("selectedProject:", project)
 
 
   return (
@@ -20,7 +19,7 @@ import DeleteButton from "./EditButtons/DeleteButton";
             <h2 className="text-pink-500 text-2xl font-bold mb-2">
               {project.project_name}
             </h2>
-            {/* <p className="text-gray-600">Written by {project.author}</p> */}
+            
             <div className="text-white mb-8">{project.body}</div>
           
 
@@ -36,13 +35,14 @@ import DeleteButton from "./EditButtons/DeleteButton";
               </div>
             ))}
             <div className="mt-auto">
-              <div className="text-pink-500 m-4">
+              <div className="text-pink-700 m-4">
                 Created by: {project.author}
               </div>
             </div>
 
+
             <div className="flex justify-between p-3">
-              <Link to={`/editproject/${project.id}`} state={{ project: project }} className="flex bg-pink-500 text-white px-3 py-1 rounded-full mt-auto mr-auto max-w-[150px] shadow-md hover:bg-red-700">
+              {/* <Link to={`/editproject/${project.id}`} state={{ project: project }} className="flex bg-pink-500 text-white px-3 py-1 rounded-full mt-auto mr-auto max-w-[150px] shadow-md hover:bg-red-700">
                 <div className="flex direction-row align-center items-center justify-center">
                   <div>
                     <svg
@@ -62,7 +62,10 @@ import DeleteButton from "./EditButtons/DeleteButton";
                   </div>
                 </div>
                 <div className="ml-2">Edit</div>
-              </Link>
+              </Link> */}
+
+
+              <EditButton project={project} />
               <DeleteButton />
             </div>
           </div>

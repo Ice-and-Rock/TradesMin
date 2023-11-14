@@ -1,19 +1,14 @@
 import useFetchProjectData from "../../hooks/useFetchProjectData.js";
 import ProjectList from "./ProjectList";
 import { Link } from "react-router-dom";
-// import { useAuth } from "../../Context/AuthProvider";
-
-
 
 export const ProjectsPage = () => {
 
-  // const { user } = useAuth();
   const {
     data: fetchedProjects,
     isPending,
     error,
   } = useFetchProjectData();
-
 
   return (
     <div className="flex h-full bg-gradient-to-b from-blue-100 to-blue-300">

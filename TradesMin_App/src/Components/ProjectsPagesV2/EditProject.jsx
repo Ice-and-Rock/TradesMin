@@ -1,20 +1,15 @@
-import { createClient } from "@supabase/supabase-js";
-import { useState,  } from "react";
+import { useState, } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-
-// API --------------------------------------------------------------------------------------------
-const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabase = createClient(supabaseUrl, supabaseKey);
+import { supabase } from "../../ContextSupabase/Client";
 
 export const EditProject = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { project } = location.state;
+  const { project } = location.state; 
   const { id } = useParams();
 
   const [isPending, setIsPending] = useState(false);
-  const [ProjectSelected, setProjectSelected] = useState({
+  const [projectSelected, setProjectSelected] = useState({
     project_name: project.project_name,
     body: project.body,
     materials: [],
@@ -23,21 +18,21 @@ export const EditProject = () => {
   // initiate a new empty array for editedMaterials
   const [editedMaterials, setEditedMaterials] = useState(project.materials);
   
-  // console.log("1 - project id:", id)
+  console.log("1 - project id:", id)
   // console.log("2 - project state:", project)
   // console.log("3 - materials array:", project.materials)
-  // console.log("4 - ProjectSelected:", ProjectSelected)
+  console.log("4 - ProjectSelected:", projectSelected)
 
 
-  // // Fetch the data by the Id number !
-  // // Here, I am trying to remove the supabase call => use props for the state, instead
+  // Fetch the data by the Id number !
+  // Here, I am trying to remove the supabase call => use props for the state, instead
   // useEffect(() => {
   //   async function fetchProjectData() {
   //     try {
   //       const { data, error } = await supabase
   //         .from("projects")
   //         .select()
-  //         .eq("id", id)
+  //         .eq("id", project.id)
   //         .single()
 
   //         if (error) {
@@ -57,15 +52,16 @@ export const EditProject = () => {
     setIsPending(true);
 
     const updatedFields = {
-      project_name: project.project_name,
-      body: project.body,
+      project_name: projectSelected.project_name,
+      body: projectSelected.body,
       materials: editedMaterials,
     };
     try {
       const { error } = await supabase
         .from("projects")
         .update(updatedFields)
-        .eq("id", id);
+        .eq("id", id)
+        
 
       if (error) {
         throw error;
@@ -75,15 +71,16 @@ export const EditProject = () => {
       navigate("/projectspage");
     } catch (error) {
       console.error("Update project error:", error);
+      console.error("Supabase error details:", error.details);
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProjectSelected({
-      ...project,
+    setProjectSelected((prevProject) => ({
+      ...prevProject,
       [name]: value,
-    });
+    }));
   };
   const handleMaterialChange = (e, index) => {
     const { name, value } = e.target;
@@ -108,7 +105,7 @@ export const EditProject = () => {
               className="w-full p-2 border bg-gray-100 border-gray-300 rounded-md mb-4 focus:outline-none focus:ring focus:border-pink-600"
               required
               name="project_name"
-              value={ProjectSelected.project_name}
+              value={projectSelected.project_name}
               onChange={handleInputChange}
             />
 
@@ -118,7 +115,7 @@ export const EditProject = () => {
               className="w-full p-2 border bg-gray-100 border-gray-300 rounded-md mb-4 focus:outline-none focus:ring focus:border-pink-600"
               required
               name="body"
-              value={ProjectSelected.body}
+              value={projectSelected.body}
               onChange={handleInputChange}
             />
 
@@ -149,7 +146,7 @@ export const EditProject = () => {
 
             <div className="mt-auto">
               <div className="text-pink-500 mb-3">
-                Created by: {ProjectSelected.author}
+                Created by: {projectSelected.author}
               </div>
             </div>
 
