@@ -11,14 +11,13 @@ import { EditProject } from "./Components/ProjectsPagesV2/EditProject";
 import { NotFound } from "./Components/NotFound";
 import { About } from "./Components/About";
 // import { Navbar } from "./Components/Navigation/Navbar";
-// import { Container } from "react-bootstrap";
 import Register from "./ContextPages/Register";
 import AuthRoute from "./ContextComponents/AuthRoute";
 import HomeLoggedIn from "./ContextPages/HomeLoggedIn";
 import Login from "./ContextPages/Login";
 import ContextNavBar from "./ContextComponents/ContextNavbar";
 import PromptLogin from "./ContextPages/PromptLogin";
-import HomeTemp from "./ContextPages/HomeTemp";
+import HomeTemp from "./ContextPages/HomeLoggedOut";
 
 const App = () => {
   // :React.FC removed for jsx file
@@ -41,11 +40,10 @@ const App = () => {
             </Route>
             <Route path="/" element={<Home />} />
             <Route path="/hometemp" element={<HomeTemp />} />
-
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-
             <Route path="/promptlogin" element={<PromptLogin />} />
+
             <Route path="/notfound" element={<NotFound />} />
           </Routes>
         </div>

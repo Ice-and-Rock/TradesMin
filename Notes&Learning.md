@@ -217,7 +217,7 @@ So, useAuth is complete, which means there is a seperate Navbar that allows user
 Write a policy to allow access to rows using AUTH NOT NULL 
     - READ policy accepts: 'authenticated' ✅
     - INSERT policy accepts: 'authenticated' ✅
-    - UPDATE
+    - UPDATE policy accepts: 'authenticated' ✅ 
     - DELETE policy accepts: 'authenticated' ✅
 
 Hard parts: 
@@ -231,3 +231,4 @@ Hard parts:
 - Remove the GoTrueClient erors
     - only call supabase createClient once to access the data
 - Add a function in EditProject.jsx so user can ADD more materials
+- Move all buttons into a seperate file **REFACTORING** ✅

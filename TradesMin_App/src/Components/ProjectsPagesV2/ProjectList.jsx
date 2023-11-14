@@ -9,13 +9,13 @@ const ProjectsList = ({ fetchedProjects, title }) => {
 
   return (
     <div className="projects-list">
-      <h2 className="text-2xl text-pink-600 font-bold mb-4">{title}</h2>
+      <h2 className="text-2xl text-pink-600 font-bold mb-2">{title}</h2>
       {fetchedProjects.map(( project ) => (
         <div
-          className=".p-2 md:p-4 my-5 border-b border-gray-300  text-pink-600 hover:text-pink-500"
+          className="p-2 md:p-4 my-2 border-b border-gray-300  text-pink-600 hover:text-pink-500"
           key={project.id}
         >
-        <div className="rounded-xl p-3 m-1 bg-blue-300 shadow-md hover:shadow-2xl ">
+        <div className="rounded-xl p-2 m-1 bg-blue-300 shadow-md hover:shadow-2xl ">
           <Link to={`/projects/${project.id}`} state={{ project: project }}
             >
             <h2 className="text-2xl text-pink-600 mb-2">{project.project_name}</h2>
