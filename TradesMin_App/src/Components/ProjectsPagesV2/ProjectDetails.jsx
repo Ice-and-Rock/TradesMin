@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import DeleteButton from "./EditButtons/DeleteButton";
 
 
 
@@ -91,7 +92,8 @@ const supabase = createClient(supabaseUrl, supabaseKey)
                 <div className="ml-2">Edit</div>
               </Link>
 
-              <button
+              <DeleteButton onDelete={handleDelete} />
+              {/* <button
                 className="flex bg-red-500 text-white px-3 py-1 rounded-full mt-auto ml-auto max-w-[100px] shadow-md hover:bg-red-700"
                 // Remove the next line and add a pop-up
                 //   onClick={handleDelete}
@@ -123,7 +125,7 @@ const supabase = createClient(supabaseUrl, supabaseKey)
                   </div>
                   <div className="ml-2">Delete</div>
                 </div>
-              </button>
+              </button> */}
             </div>
           </div>
         </article>

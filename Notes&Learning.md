@@ -165,9 +165,13 @@ Done initially to render state in ProjectsPage
 **CRUD Changes !!!**
 # The above CRUD requires change **
 ## To reduce the Supabase Client calls the following must happen:
-- Pass { props } to ProjectDetails
-    - Separate Async function: handleDelete()
-- Pass { props } to EditProject
+- Pass { *project* } state to ProjectDetails from ProjectList ✅
+    - Separate Async function: handleDelete() 
+        Create a new component
+        - pass in the *supabase: context/client* for the async delete request
+        - delete request must match id = {id} useParams() 
+        - useNavigate() back to projectList
+- Pass { *project* } state to EditProject from ProjectDetails ✅
     - Separate Async function: handleSubmit() 
 
 
@@ -220,5 +224,6 @@ Hard parts:
 
 # Eventually...
 - Fix the 'visability' bug relating to the Navbar when a user selects a Link
-- remove the GoTrueClient erors
+- Remove the GoTrueClient erors
     - only call supabase createClient once to access the data
+- Add a function in EditProject.jsx so user can ADD more materials

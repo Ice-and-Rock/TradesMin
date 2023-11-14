@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { useState, useEffect } from "react";
+import { useState,  } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 // API --------------------------------------------------------------------------------------------
@@ -8,22 +8,29 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const EditProject = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const { project } = location.state;
   const { id } = useParams();
-  const [projectSelection, setProjectSelection] = useState({
+
+  const [isPending, setIsPending] = useState(false);
+  const [ProjectSelected, setProjectSelected] = useState({
     project_name: project.project_name,
     body: project.body,
     materials: [],
     author: project.author,
   });
   // initiate a new empty array for editedMaterials
-  const [editedMaterials, setEditedMaterials] = useState([]);
-  const [isPending, setIsPending] = useState(false);
-  const navigate = useNavigate();
+  const [editedMaterials, setEditedMaterials] = useState(project.materials);
+  
+  // console.log("1 - project id:", id)
+  // console.log("2 - project state:", project)
+  // console.log("3 - materials array:", project.materials)
+  // console.log("4 - ProjectSelected:", ProjectSelected)
+
 
   // // Fetch the data by the Id number !
-  //  Here, I am trying to remove the supabase call => use props for the state, instead
+  // // Here, I am trying to remove the supabase call => use props for the state, instead
   // useEffect(() => {
   //   async function fetchProjectData() {
   //     try {
@@ -36,7 +43,7 @@ export const EditProject = () => {
   //         if (error) {
   //           throw error
   //         }
-  //         setProjectSelection(data)
+  //         setProjectSelected(data)
   //         setEditedMaterials(data.materials)
   //     } catch (error) {
   //       console.log("This si the Error:", error)
@@ -67,13 +74,13 @@ export const EditProject = () => {
       setIsPending(false);
       navigate("/projectspage");
     } catch (error) {
-      console.error("This si the error:", error);
+      console.error("Update project error:", error);
     }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProjectSelection({
+    setProjectSelected({
       ...project,
       [name]: value,
     });
@@ -86,7 +93,7 @@ export const EditProject = () => {
     setEditedMaterials(updatedMaterials);
   };
 
-  console.log(editedMaterials);
+  console.log("edited materails:", editedMaterials);
 
   return (
     <div className="bg-blue-100 min-h-screen flex items-center justify-center">
@@ -101,7 +108,7 @@ export const EditProject = () => {
               className="w-full p-2 border bg-gray-100 border-gray-300 rounded-md mb-4 focus:outline-none focus:ring focus:border-pink-600"
               required
               name="project_name"
-              value={projectSelection.project_name}
+              value={ProjectSelected.project_name}
               onChange={handleInputChange}
             />
 
@@ -111,7 +118,7 @@ export const EditProject = () => {
               className="w-full p-2 border bg-gray-100 border-gray-300 rounded-md mb-4 focus:outline-none focus:ring focus:border-pink-600"
               required
               name="body"
-              value={projectSelection.body}
+              value={ProjectSelected.body}
               onChange={handleInputChange}
             />
 
@@ -142,7 +149,7 @@ export const EditProject = () => {
 
             <div className="mt-auto">
               <div className="text-pink-500 mb-3">
-                Created by: {projectSelection.author}
+                Created by: {ProjectSelected.author}
               </div>
             </div>
 
