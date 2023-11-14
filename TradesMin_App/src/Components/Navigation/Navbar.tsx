@@ -1,6 +1,6 @@
 // import { useState } from "react";
 // import { Link } from "react-router-dom";
-import DropDownMobile from "./DropDownMobile";
+// import DropDownMobile from "./DropDownMobile";
 import LogoSmall from "../../assets/tradesminLogo_small.png";
 
 // Create an interface for the Navigation
@@ -45,7 +45,7 @@ export const Navbar = () => {
           </div>
         </div>
         <div>
-          <DropDownMobile />
+          {/* <DropDownMobile /> */}
         </div>
       </div>
       {/* <div className="ml-10 flex items-baseline space-x-4 bg-red-500">
