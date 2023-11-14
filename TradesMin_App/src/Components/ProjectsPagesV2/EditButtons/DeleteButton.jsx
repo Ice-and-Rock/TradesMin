@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../../../ContextSupabase/Client";
 
-const DeleteButton = ({ projectId }) => {
+const DeleteButton = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -13,7 +13,7 @@ const DeleteButton = ({ projectId }) => {
         throw error;
       }
 
-      console.log(`Project with ID: ${projectId} has been deleted.`);
+      console.log(`Project with ID: ${id} has been deleted.`);
       navigate("/projectspage");
     } catch (error) {
       console.error(error.message);
