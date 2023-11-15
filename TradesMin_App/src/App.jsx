@@ -31,7 +31,6 @@ const App = () => {
             {/* The following line is for AuthProvider */}
             <Route element={<AuthRoute />}>
               <Route path="/homeloggedin" element={<HomeLoggedIn />} />
-              <Route path="/about" element={<About />} />
 
               <Route path="/projectspage" element={<ProjectsPage />} />
               <Route path="/createproject" element={<CreateProject />} />
@@ -39,6 +38,7 @@ const App = () => {
               <Route path="/projects/:id" element={<ProjectDetails />} />
             </Route>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/hometemp" element={<HomeTemp />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
