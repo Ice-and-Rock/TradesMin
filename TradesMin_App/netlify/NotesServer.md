@@ -10,3 +10,15 @@
     });
 ```
 
+# Serverless design
+### Folder sctructure
+- Create a functions folder
+  - Break down each function into several files
+    - GET 
+    - POST
+    - PUT
+    - DELETE
+
+## TODO
+- Break the database tables into three
+  - Projects / Materials / join 
