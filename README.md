@@ -8,14 +8,16 @@ Every decision tha I make, I always try to zoom out and consider the architectur
 Nick
 
 
-...Follow on articles that can be written from this work:
+### ...Follow on articles that can be written from this work:
 - passing state through <Link> tags using ```useLocation() + location.state```
     - From useFetch > ProjectList > ProjectDetails
 - Using ```authProvider``` to pass state through the app and wrap components and Routes with it. 
     - Valid webtokens are provided by Supabase object returned when a valid login crediential is provided 
 - Designing a backend interaction with a database using serverless functions
     - Great way to save time and money while using a database provided by a third party
-
+- Using dummy data files for Development
+    - using JSON server to write the data and test GET POST requests etc...
+- 
 
 
 
