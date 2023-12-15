@@ -34,6 +34,7 @@ export const About = () => {
     <div className="flex items-center justify-center h-">
       <Card style={{ width: "20rem", padding: "10px" }}>
         <Card.Img variant="top" src={logo} />
+
         <Card.Body>
           <Card.Text>
             This app is designed to offer a practical solution to managing a small company in the Electrical industry. 
@@ -44,14 +45,16 @@ export const About = () => {
           <Card.Text>
             Please feel free to Login and leave us some feedback. We imporove our systems based on our customers reviews.
           </Card.Text>
-          <Card.Title>My name is Nick,</Card.Title>
+        </Card.Body>
+
+        <Card.Body>
+          <Card.Title>I'm Nick Valente,</Card.Title>
           <Card.Text>
             I built this project using React, TypeScript, Tailwind CSS,
             Bootstrap, and various other open-source libraries.
           </Card.Text>
         </Card.Body>
         <Card.Body>
-          
           <Card.Text>Check out my other projects and feel free to contact me below. Thanks</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
