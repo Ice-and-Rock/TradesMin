@@ -18,6 +18,7 @@ import Login from "./ContextPages/Login";
 import ContextNavBar from "./ContextComponents/ContextNavbar";
 import PromptLogin from "./ContextPages/PromptLogin";
 import HomeTemp from "./ContextPages/HomeLoggedOut";
+import AboutMe from "./Components/AboutMe";
 
 const App = () => {
   // :React.FC removed for jsx file
@@ -28,17 +29,18 @@ const App = () => {
         <div className="flex-grow bg-blue-200">
           <ContextNavBar />
           <Routes>
-            {/* The following line is for AuthProvider */}
+            {/* AuthProvider Routes */}
             <Route element={<AuthRoute />}>
               <Route path="/homeloggedin" element={<HomeLoggedIn />} />
-
               <Route path="/projectspage" element={<ProjectsPage />} />
               <Route path="/createproject" element={<CreateProject />} />
               <Route path="editproject/:id" element={<EditProject />} />
               <Route path="/projects/:id" element={<ProjectDetails />} />
             </Route>
+            {/* Non-Authorised Routes */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="aboutme" element={<AboutMe />} />
             <Route path="/hometemp" element={<HomeTemp />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
