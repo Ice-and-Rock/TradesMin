@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const HomeTemp = () => {
@@ -9,7 +10,7 @@ const HomeTemp = () => {
       Welcome!
       </Card.Body>
       <Card.Body>
-      Please sign in to continue
+      Please <Link to='/login'>sign in</Link> to continue
     </Card.Body>
     </Card>
   )

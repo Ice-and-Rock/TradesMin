@@ -12,7 +12,7 @@ const Home = () => {
           Built for mobile 📞
         </div>
         <div className="m-2 p-2 flex items-center justify-center text-gray-800">
-          Click <Link to="/Login"> here </Link> to login. 
+          Click <Link to="/login"> here </Link> to login. 
         </div>
       </div>
     </div>
