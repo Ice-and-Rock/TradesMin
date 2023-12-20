@@ -12,7 +12,7 @@
 
 # Serverless design
 ### Folder sctructure
-- Create a functions folder
+Create a functions folder
   - Break down each function into several files
     - GET 
     - POST
