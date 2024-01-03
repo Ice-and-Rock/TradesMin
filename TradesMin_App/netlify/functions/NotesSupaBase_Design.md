@@ -8,4 +8,4 @@ After making the diagram with primary/foreign keys
     Example: materials.quantity => Text / Numeric
         - Will this be calculated later or just presented as a list? 25 meters of cable + 15 meters of cable
         - Ultimately, a DD menu to select materials is required
-            *then, the calculations can be calibrated*
+            *then, the calculations can be type-calibrated*
