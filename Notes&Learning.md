@@ -226,9 +226,9 @@ Hard parts:
 # New Work. DECEMBER 2023
 
 - Create a new branch for the working Version 1 ✅
-- Fix the two running Errors
+- ~~Fix the two running Errors~~
     - png file not imported correctly (from legacy Vite install) ✅
-    - Multiple goThroughClient instances in CreateProject.jsx 
+    - Multiple goThroughClient instances in CreateProject.jsx ✅
 
 - Split the database into: **Users** / **Companys** / **Projects** / **Materials** / **Clients** 
     - using primary keys / foreign keys 
