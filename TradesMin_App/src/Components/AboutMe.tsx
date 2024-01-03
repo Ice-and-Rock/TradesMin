@@ -32,7 +32,7 @@ const AboutMe = () => {
           </ListGroup.Item>
         </ListGroup>
         <Card.Body>
-          <Card.Link href="/">Home</Card.Link>
+          <Card.Link href="/">Welcome Page</Card.Link>
           <Card.Link href="/login">Sign in</Card.Link>
         </Card.Body>
       </Card>

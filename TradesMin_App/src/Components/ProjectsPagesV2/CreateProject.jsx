@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createClient } from "@supabase/supabase-js";
+// import { createClient } from "@supabase/supabase-js";
+import { supabase } from "../../ContextSupabase/Client";
 
 
 
-const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabase = createClient(supabaseUrl, supabaseKey)
+// const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
+// const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+// const supabase = createClient(supabaseUrl, supabaseKey)
   
  export const CreateProject = () => {
     
