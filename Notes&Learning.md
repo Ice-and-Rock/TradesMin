@@ -221,9 +221,26 @@ Write a policy to allow access to rows using AUTH NOT NULL
     - DELETE policy accepts: 'authenticated' ✅
 
 Hard parts: 
-- Enable update auth: Need to include email address 
+- Enable update auth: Need to include email address 🚫
 
-## Migrate the API and interations to a server 
+# New Work. DECEMBER 2023
+
+- Create a new branch for the working Version 1 ✅
+- Fix the two running Errors
+    - png file not imported correctly (from legacy Vite install) ✅
+    - Multiple goThroughClient instances in CreateProject.jsx 
+
+- Split the database into: **Users** / **Companys** / **Projects** / **Materials** / **Clients** 
+    - using primary keys / foreign keys 
+- Add user_id to the database
+    - So users are associated with their data
+- Change the database *Policies*
+    - A user can only interact with data that has been associated with their account
+- Write the **Serverless Functions** 
+    - Have the functions only interact with the data the user
+- RE-Design of App 
+    - Projects must include Client and materials using SQL query of new Tables 
+- 
 
 
 # Eventually...
