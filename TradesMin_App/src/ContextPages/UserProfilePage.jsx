@@ -1,3 +1,4 @@
+import UserData from "../hooks/useFetchUserData.js"
 import { Container, Card } from "react-bootstrap";
 import { useAuth } from "../Context/AuthProvider";
 
@@ -13,7 +14,7 @@ const UserAccountPage = () => {
       <Card.Body>
         <p>{user.email}</p>
         <p>{user.phone}</p>
-        
+        <UserData />
         
       </Card.Body>
     </Card>

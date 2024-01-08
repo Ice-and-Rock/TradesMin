@@ -7,7 +7,7 @@ const useFetchUserData = () => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("useFetchProjectData running 1");
+  console.log("useFetchUserData running 1");
 
   useEffect(() => {
     const abortCont = new AbortController();
@@ -15,7 +15,7 @@ const useFetchUserData = () => {
     setTimeout(() => {
      supabase
         .from('users')
-        .select(users)
+        .select()
         .then(({ data, error }) => {
             if (error) {
                 setError(error.message)
