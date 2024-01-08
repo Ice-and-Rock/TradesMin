@@ -19,6 +19,7 @@ import ContextNavBar from "./ContextComponents/ContextNavbar";
 import PromptLogin from "./ContextPages/PromptLogin";
 import HomeTemp from "./ContextPages/HomeLoggedOut";
 import AboutMe from "./Components/AboutMe";
+import UserProfilePage from "./ContextPages/UserProfilePage";
 
 const App = () => {
   // :React.FC removed for jsx file
@@ -36,6 +37,7 @@ const App = () => {
               <Route path="/createproject" element={<CreateProject />} />
               <Route path="editproject/:id" element={<EditProject />} />
               <Route path="/projects/:id" element={<ProjectDetails />} />
+              <Route path="/myprofile" element={<UserProfilePage />} />
             </Route>
             {/* Non-Authorised Routes */}
             <Route path="/" element={<Home />} />

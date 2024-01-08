@@ -1,10 +1,11 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const UserLastLogin = ({ lastSignIn }) => {
-  // Convert the string to a Date object
+  
   const signInDate = new Date(lastSignIn);
-
-  // Get the date and time components
+  
   const dateOptions = { year: "numeric", month: "long", day: "numeric" };
   const timeOptions = { hour: "numeric", minute: "numeric", second: "numeric" };
 
@@ -12,11 +13,18 @@ const UserLastLogin = ({ lastSignIn }) => {
   const formattedTime = signInDate.toLocaleTimeString(undefined, timeOptions);
 
   return (
-    <div>
-      <p>{formattedDate}</p>
-      <p>At : {formattedTime}</p>
+    <div className="flex-column  justify-content-center align-items-center">
+<div className="colored-box p-1 rounded text-center" style={{ backgroundColor: '#a0d3e8' }}>        <p className="mb-0">{formattedDate}</p>
+        <p>At: {formattedTime}</p>
+      </div>
+      <Link to="/notfound">
+      <div className="colored-box p-4 rounded text-center">
+        <Button variant="warning">Not you? Please click here</Button>
+      </div>
+      </Link>
+      
     </div>
   );
 };
 
-export default UserLastLogin
+export default UserLastLogin;

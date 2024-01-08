@@ -6,7 +6,7 @@ import UserLastLogin from "./LoginComponents/UserLastLogin"
 const HomeLoggedIn = () => {
   const { user } = useAuth();
   console.log("Home Logged in. Check ✅")
-  console.log(user)
+  
 
   return (
   <Card className="m-4">
