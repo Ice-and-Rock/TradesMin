@@ -14,6 +14,8 @@
 - Client Data
 - Material data
 - Company Data 
+    **Make sure RLSecurity is in place for Auth.users**
+    - 
 
 ## Write a bunch of Serverless functions (CRUD)
 **This will perform CRUD operations.**
