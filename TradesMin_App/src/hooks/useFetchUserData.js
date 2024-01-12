@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from '../ContextSupabase/Client.jsx'
 
-const useFetchUserData = () => {
+const useFetchUserData = (  ) => {
 
   const [userData, setUserData] = useState(null);
   const [isPending, setIsPending] = useState(true);
@@ -16,6 +16,7 @@ const useFetchUserData = () => {
      supabase
         .from('users')
         .select()
+        // .where(auth.user.id === UUID) ??
         .then(({ data, error }) => {
             if (error) {
                 setError(error.message)

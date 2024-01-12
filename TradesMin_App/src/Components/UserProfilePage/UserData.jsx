@@ -1,24 +1,10 @@
-import useFetchUserData from "../../hooks/useFetchUserData.js";
 
-
-export const UserData = () => {
-
-//     const {
-//         userData: fetchedUser,
-//         isPending,
-//         error,
-//       } = useFetchUserData();
-// console.log(fetchedUser)
-
-      
+const UserData = (fetchedUser) => {
   return (
     <div>
-      <p>User Data</p>
-      {/* <p>{isPending}</p>
-      <p>{error}</p> */}
-    
-
+      <p>{fetchedUser.name}</p>
     </div>
   )
 };
 
+export default UserData
