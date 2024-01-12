@@ -10,8 +10,8 @@ const UserPage = () => {
       {error && <div className="text-red-600"> {error} </div>}
       {isPending && (
         <div className="text-pink-500 font-bold m-2 p-2">
-          {" "}
-          Waiting for data...{" "}
+          
+          Waiting for data...
         </div>
       )}
       {fetchedUser && (
