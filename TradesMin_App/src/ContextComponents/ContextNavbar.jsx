@@ -1,5 +1,5 @@
 // import { Button } from "react-bootstrap";
-// line above removed from the Nav.Link button for logout 'as={button}'
+// line above removed from the Nav.Link button for logout 'as={button}' 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -48,7 +48,6 @@ const ContextNavBar = () => {
               </Nav.Link>
             )}
             
-
             {/* LOGGED IN FROM HERE */}
             {auth && (
               <Nav.Link as={Link} to="/homeloggedin">
