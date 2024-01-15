@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 const EditButton = ({ project }) => {
   const navigate = useNavigate();
-  console.log("project to EDIT:", project);
+  // console.log("project to EDIT:", project);
 
   const handleEditClick = () => {
     navigate(`/editproject/${project.id}`, { state: { project } });

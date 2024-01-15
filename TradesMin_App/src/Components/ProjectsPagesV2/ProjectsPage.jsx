@@ -10,7 +10,7 @@ export const ProjectsPage = () => {
     error,
   } = useFetchProjectData();
 
-  console.log("ProjectsPage data:", fetchedProjects)
+  // console.log("ProjectsPage data:", fetchedProjects)
 
   return (
     <div className="flex h-full bg-gradient-to-b from-blue-100 to-blue-300">

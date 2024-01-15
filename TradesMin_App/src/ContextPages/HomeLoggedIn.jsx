@@ -5,7 +5,7 @@ import UserLastLogin from "./LoginComponents/UserLastLogin"
 
 const HomeLoggedIn = () => {
   const { user } = useAuth();
-  console.log("Home Logged in. Check ✅", user)
+  console.log("Home Logged in. Check ✅")
   
 
   return (

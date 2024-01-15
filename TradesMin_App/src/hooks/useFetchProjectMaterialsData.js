@@ -1,21 +1,26 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../ContextSupabase/Client.jsx";
 
-const useFetchMaterialData = (materialId) => {
+const useFetchProjectMaterialsData = (projectId) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("useFetchMaterialData running 1");
+  console.log("useFetchMaterialData running 1", projectId);
 
   useEffect(() => {
     const abortCont = new AbortController();
 
     setTimeout(() => {
       supabase
-        .from('materials')
-        .select('*')
-        .eq('id', materialId)
+        .from('project_materials')
+        .select(`
+        id,
+        quantity,
+        notes,
+        materials ( id, material )
+        `)
+        .eq('project_id', projectId)
         .then(({ data, error }) => {
           if (error) {
             setError(error.message);
@@ -38,9 +43,9 @@ const useFetchMaterialData = (materialId) => {
     }, 500);
 
     return () => abortCont.abort();
-  }, []);
+  }, [projectId]);
 
   return { data, isPending, error };
 };
 
-export default useFetchMaterialData; 
+export default useFetchProjectMaterialsData; 

@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import DeleteButton from "./EditButtons/DeleteButton.jsx";
 import EditButton from "./EditButtons/EditButton.jsx";
+import MaterialsList from "./MaterialsList.jsx";
 
 export const ProjectDetails = () => {
   // the Error below was part of the handleDelete function
@@ -17,12 +18,17 @@ export const ProjectDetails = () => {
             <h2 className="text-pink-500 text-2xl font-bold mb-2">
               {project.project_name}
             </h2>
+            <p>Start date: {project.start_date}</p>
+            <p>Estimate end: {project.expected_end_date}</p>
 
-            <div className="text-white mb-8">{project.body}</div>
+            <div className="text-white mb-8">{project.description}</div>
+
+            <p>Materials:</p>
+            <MaterialsList projectId={project.id}/>
 
             {/* MAP THROUGH MATERIALS TO RENDER THEM ALL */}
             {/* Must be conditional IF 'materials' exist */}
-            {project.materials.map((material, index) => (
+            {/* {project.materials.map((material, index) => (
               <div
                 key={index}
                 className="flex justify-between bg-blue-400 rounded p-2 my-1 text-white"
@@ -30,7 +36,9 @@ export const ProjectDetails = () => {
                 <p>{material.name}</p>
                 <p>{material.quantity}</p>
               </div>
-            ))}
+            ))} */}
+
+
             <div className="mt-auto">
               <div className="text-pink-700 m-4">
                 Created by: {project.author}
