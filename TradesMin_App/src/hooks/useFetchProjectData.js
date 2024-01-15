@@ -13,8 +13,8 @@ const useFetchProjectData = () => {
 
     setTimeout(() => {
       supabase
-        .from("projects")
-        .select()
+        .from('projects')
+        .select('*')
         .then(({ data, error }) => {
           if (error) {
             setError(error.message);
@@ -42,4 +42,4 @@ const useFetchProjectData = () => {
   return { data, isPending, error };
 };
 
-export default useFetchProjectData;
+export default useFetchProjectData; 

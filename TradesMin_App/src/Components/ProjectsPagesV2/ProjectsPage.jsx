@@ -10,6 +10,8 @@ export const ProjectsPage = () => {
     error,
   } = useFetchProjectData();
 
+  console.log("ProjectsPage data:", fetchedProjects)
+
   return (
     <div className="flex h-full bg-gradient-to-b from-blue-100 to-blue-300">
       <div className="bg-gray-200 m-4 sm:p-4 shadow m-4 rounded-xl flex flex-col">
@@ -22,7 +24,7 @@ export const ProjectsPage = () => {
               <CreateButton />
               <ProjectList
                 fetchedProjects={fetchedProjects}
-                title="Projects list..."
+                title="My projects..."
               />
             </div>
           </div>

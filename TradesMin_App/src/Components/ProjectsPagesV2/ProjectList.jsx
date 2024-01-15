@@ -21,7 +21,8 @@ const ProjectsList = ({ fetchedProjects, title }) => {
                 <h2 className="text-2xl text-pink-600 mb-2">
                   {project.project_name}
                 </h2>
-                <p className="text-gray-800 text-sm">{project.body}</p>
+                <p className="text-gray-800 text-sm">{project.description}</p>
+                <p className="text-gray-800 text-sm">Start date: {project.start_date}</p>
               </Link>
             </div>
           </div>
