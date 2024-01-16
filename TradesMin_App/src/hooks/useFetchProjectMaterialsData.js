@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { supabase } from "../ContextSupabase/Client.jsx";
 
+// Notes 
+// This hook retrieves the project_materials table using projectId as props ✅
+// using Supabase nested queries, it also returns materials with  
+
 const useFetchProjectMaterialsData = (projectId) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("useFetchMaterialData running 1", projectId);
+//   console.log("useFetchProjectMaterialData running 1", projectId);
 
   useEffect(() => {
     const abortCont = new AbortController();
@@ -15,10 +19,11 @@ const useFetchProjectMaterialsData = (projectId) => {
       supabase
         .from('project_materials')
         .select(`
-        id,
-        quantity,
-        notes,
-        materials ( id, material )
+        project_id,
+    material_id,
+    quantity,
+    notes,
+    materials: materials(*)
         `)
         .eq('project_id', projectId)
         .then(({ data, error }) => {

@@ -6,7 +6,7 @@ const useFetchMaterialData = (materialId) => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("useFetchMaterialData running 1");
+  console.log("useFetchMaterialData running 1", materialId);
 
   useEffect(() => {
     const abortCont = new AbortController();

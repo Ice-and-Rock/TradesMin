@@ -6,7 +6,7 @@ const useFetchProjectData = () => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("useFetchProjectData running 1");
+  // console.log("useFetchProjectData running 1");
 
   useEffect(() => {
     const abortCont = new AbortController();
