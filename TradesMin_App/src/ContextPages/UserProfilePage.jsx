@@ -8,10 +8,10 @@ const UserAccountPage = () => {
   return (
     <Container>
       <Card>
-        <Card.Header>This is where the user's profile will go</Card.Header>
+        <Card.Header>This is the UserAccountPage Component</Card.Header>
         <Card.Body>
           <p>User profile: {user.email}</p>
-          <UserPage />
+          <UserPage user={user}/>
         </Card.Body>
       </Card>
     </Container>

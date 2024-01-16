@@ -1,9 +1,11 @@
 import useFetchUserData from "../../hooks/useFetchUserData.js";
 import UserData from "./UserData.jsx";
 
-const UserPage = () => {
+const UserPage = ( user ) => {
+  // const userId = userData.auth_user_id
   const { userData: fetchedUser, isPending, error } = useFetchUserData();
   console.log("fetchedUser OBJECT:", fetchedUser);
+  console.log("UserData PROPS:", user);
 
   return (
     <div>
@@ -17,7 +19,7 @@ const UserPage = () => {
       {fetchedUser && (
         <div>
           <div className="flex flex-col p-1 min-w-auto">
-            <UserData fetchedUser={fetchedUser} title="User data..." />
+            <UserData fetchedUser={fetchedUser} />
           </div>
         </div>
       )}

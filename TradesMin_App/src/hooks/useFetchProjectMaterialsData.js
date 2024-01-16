@@ -23,7 +23,7 @@ const useFetchProjectMaterialsData = (projectId) => {
     material_id,
     quantity,
     notes,
-    materials: materials(*)
+    materials: materials(*) 
         `)
         .eq('project_id', projectId)
         .then(({ data, error }) => {
