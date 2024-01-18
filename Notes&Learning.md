@@ -250,3 +250,5 @@ Hard parts:
     - only call supabase createClient once to access the data
 - Add a function in EditProject.jsx so user can ADD more materials
 - Move all buttons into a seperate file **REFACTORING** ✅
+- Fix the props and returned objects/arrays from the useFetch(s)
+    - at the moment, there are a mixture of arrays and objects! 

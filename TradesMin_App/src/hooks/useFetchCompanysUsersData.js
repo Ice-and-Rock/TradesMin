@@ -3,7 +3,7 @@ import { supabase } from "../ContextSupabase/Client.jsx";
 
 // Notes
 
-const useFetchCompanyData = ( companyId ) => {
+const useFetchCompanysUsersData = ( userId ) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
@@ -15,9 +15,9 @@ const useFetchCompanyData = ( companyId ) => {
 
     setTimeout(() => {
       supabase
-        .from("companys")
-        .select("*")
-        .eq("id", companyId)
+        .from("companys_users")
+        .select('*')
+        .eq("auth_user_id", userId)
         .then(({ data, error }) => {
           if (error) {
             setError(error.message);
@@ -36,13 +36,13 @@ const useFetchCompanyData = ( companyId ) => {
             setError(err.message);
             console.error("Error:", err.message);
           }
-        }); 
+        });
     }, 500);
 
     return () => abortCont.abort();
-  }, [companyId]);
+  }, [userId]);
 
   return { data, isPending, error };
 };
 
-export default useFetchCompanyData;
+export default useFetchCompanysUsersData;
