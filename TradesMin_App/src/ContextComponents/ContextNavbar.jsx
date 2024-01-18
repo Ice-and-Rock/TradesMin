@@ -60,12 +60,12 @@ const ContextNavBar = () => {
               </Nav.Link>
             )}
             {auth && (
-              <Nav.Link as={Link} to="/myprofile">
+              <Nav.Link as={Link} to="/profile">
                 Profile
               </Nav.Link>
             )}
             {auth && (
-              <Nav.Link as={Link} to="/mycompany">
+              <Nav.Link as={Link} to="/company">
                 Company
               </Nav.Link>
             )}

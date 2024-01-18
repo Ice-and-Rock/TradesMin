@@ -19,7 +19,7 @@ import ContextNavBar from "./ContextComponents/ContextNavbar";
 import PromptLogin from "./ContextPages/PromptLogin";
 import HomeTemp from "./ContextPages/HomeLoggedOut";
 import AboutMe from "./Components/AboutMe";
-import UserProfilePage from "./ContextPages/UserProfilePage";
+import ProfilePage from "./ContextPages/ProfilePage";
 import CompanyPage from "./Components/CompanyPage/CompanyPage";
 
 const App = () => {
@@ -38,8 +38,8 @@ const App = () => {
               <Route path="/createproject" element={<CreateProject />} />
               <Route path="editproject/:id" element={<EditProject />} />
               <Route path="/projects/:id" element={<ProjectDetails />} />
-              <Route path="/myprofile" element={<UserProfilePage />} />
-              <Route path="/mycompany" element={<CompanyPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/company" element={<CompanyPage />} />
             </Route>
             {/* Non-Authorised Routes */}
             <Route path="/" element={<Home />} />

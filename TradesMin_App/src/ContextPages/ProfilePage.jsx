@@ -1,8 +1,8 @@
 import { Container, Card } from "react-bootstrap";
 import { useAuth } from "../Context/AuthProvider";
-import UserPage from "../Components/UserProfilePage/UserPage.jsx";
+import UserPage from "../Components/ProfilePage/UserPage.jsx";
 
-const UserAccountPage = () => {
+const ProfilePage = () => {
   const { user } = useAuth();
 
   // console.log("Auth user object", user);
@@ -15,7 +15,7 @@ const UserAccountPage = () => {
   return (
     <Container className="my-2">
       <Card>
-        <Card.Header>UserAccountPage Component</Card.Header>
+        <Card.Header>ProfilePage Component</Card.Header>
         <Card.Body>
           <Card.Text>
             <div>Auth profile:</div>
@@ -36,4 +36,4 @@ const UserAccountPage = () => {
   );
 };
 
-export default UserAccountPage;
+export default ProfilePage;
