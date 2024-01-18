@@ -1,30 +1,32 @@
+// import { Button, Card } from "react-bootstrap";
 import useFetchUserData from "../../hooks/useFetchUserData.js";
 import UserData from "./UserData.jsx";
 
-const UserPage = ( user ) => {
-  // const userId = userData.auth_user_id
-  const { userData: fetchedUser, isPending, error } = useFetchUserData();
-  console.log("fetchedUser OBJECT:", fetchedUser);
-  console.log("UserData PROPS:", user);
+const UserPage = ({ userId }) => {
+  const { userData: fetchedUser, isPending, error } = useFetchUserData(userId);
+  // console.log("fetchedUser OBJECT:", fetchedUser);
+  // console.log("UserData PROPS:", userId);
 
   return (
     <div>
       {error && <div className="text-red-600"> {error} </div>}
       {isPending && (
         <div className="text-pink-500 font-bold m-2 p-2">
-          
           Waiting for data...
         </div>
       )}
       {fetchedUser && (
         <div>
-          <div className="flex flex-col p-1 min-w-auto">
-            <UserData fetchedUser={fetchedUser} />
-          </div>
+          <UserData fetchedUser={fetchedUser} />
+          {/* <Card>
+            <Card.Body>
+              <Button variant="warning">Company information</Button>
+            </Card.Body>
+          </Card> */}
         </div>
       )}
     </div>
   );
 };
 
-export default UserPage
+export default UserPage;

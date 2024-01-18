@@ -25,3 +25,8 @@ Organise them into folders:
     - Client Data
     - Material data 
     - Company Data 
+
+
+    Useful Objects:
+
+user:

@@ -5,7 +5,7 @@ import { supabase } from "../ContextSupabase/Client.jsx";
 // This hook retrieves the project_materials table using projectId as props ✅
 // using Supabase nested queries, it also returns materials with  
 
-const useFetchProjectMaterialsData = (projectId) => {
+const useFetchProjectMaterialsData = ( projectId ) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);

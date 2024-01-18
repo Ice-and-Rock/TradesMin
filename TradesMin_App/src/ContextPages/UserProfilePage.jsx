@@ -5,13 +5,31 @@ import UserPage from "../Components/UserProfilePage/UserPage.jsx";
 const UserAccountPage = () => {
   const { user } = useAuth();
 
+  // console.log("Auth user object", user);
+
+  // Below rendres an emoji based on user.aud value { ? authenticated }
+  const renderStatusEmoji = () => {
+    return user.aud === "authenticated" ? "✅" : "❌";
+  };
+
   return (
-    <Container>
+    <Container className="my-2">
       <Card>
-        <Card.Header>This is the UserAccountPage Component</Card.Header>
+        <Card.Header>UserAccountPage Component</Card.Header>
         <Card.Body>
-          <p>User profile: {user.email}</p>
-          <UserPage user={user}/>
+          <Card.Text>
+            <div>Auth profile:</div>
+            <p> {user.email}</p>
+            <div>Status:</div>
+            <p>
+              {user.aud} {renderStatusEmoji()}
+            </p>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card>
+        <Card.Body>
+          <UserPage userId={user.id} />
         </Card.Body>
       </Card>
     </Container>

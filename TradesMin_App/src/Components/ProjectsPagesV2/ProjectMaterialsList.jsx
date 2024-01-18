@@ -12,7 +12,7 @@ const ProjectMaterialsList = ({ projectId }) => {
     data: fetchedProjectMaterials,
     isPending,
     error,
-  } = useFetchProjectMaterialsData(projectId);
+  } = useFetchProjectMaterialsData( projectId ) ;
 
   console.log("ProjectMaterialsList data:", fetchedProjectMaterials);
 
@@ -48,7 +48,7 @@ const ProjectMaterialsList = ({ projectId }) => {
                 </div>
                 <div>
                 <Button
-                    variant="info"
+                    variant="warning"
                     onClick={() => handleShowModal(material.materials)}
                   >
                     Item Info

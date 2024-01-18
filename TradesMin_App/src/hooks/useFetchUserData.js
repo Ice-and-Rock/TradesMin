@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { supabase } from '../ContextSupabase/Client.jsx'
 
-const useFetchUserData = (  ) => {
+const useFetchUserData = ( userId ) => {
 
   const [userData, setUserData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log("useFetchUserData running 1");
+//   console.log("useFetchUserData running 1");
 
   useEffect(() => {
     const abortCont = new AbortController();
@@ -15,8 +15,8 @@ const useFetchUserData = (  ) => {
     setTimeout(() => {
      supabase
         .from('users')
-        .select()
-        // .where(auth.user.id === UUID) ??
+        .select('*')
+        .eq('auth_user_id', userId)
         .then(({ data, error }) => {
             if (error) {
                 setError(error.message)

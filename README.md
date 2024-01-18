@@ -17,7 +17,7 @@ Nick
     - Great way to save time and money while using a database provided by a third party
 - Using dummy data files for Development
     - using JSON server to write the data and test GET POST requests etc...
-- 
+- React Bootstrap limitations
 
 
 

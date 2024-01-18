@@ -51,17 +51,22 @@ const ContextNavBar = () => {
             {/* LOGGED IN FROM HERE */}
             {auth && (
               <Nav.Link as={Link} to="/homeloggedin">
-                User HomePage
+                Dashboard
               </Nav.Link>
             )}
             {auth && (
               <Nav.Link as={Link} to="/projectspage">
-                User Projects
+                My Projects
               </Nav.Link>
             )}
             {auth && (
               <Nav.Link as={Link} to="/myprofile">
-                My Profile
+                Profile
+              </Nav.Link>
+            )}
+            {auth && (
+              <Nav.Link as={Link} to="/mycompany">
+                Company
               </Nav.Link>
             )}
             <Nav.Link as={Link} to="/about">
