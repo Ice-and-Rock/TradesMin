@@ -1,0 +1,52 @@
+Table companys {
+  id integer [primary key]
+  created_at timestamp
+  company_name varchar
+  address varchar
+  postcode varchar
+  phone_number integer
+}
+Table users {
+  auth_user_id integer [primary key]  
+  created_at timestamp
+  company_id integer [ref: > companys.id]
+  username varchar
+  country_code varchar
+  phone_number integer
+  role varchar
+}
+Table projects {
+  id integer [primary key]
+  company_id integer [ref: > companys.id]
+  created_at timestamp
+  description varchar
+  author varchar [ref: > users.auth_user_id]
+  start_date date 
+  expected_end_date date
+  completed boolean 
+}
+Table materials {
+  id integer [primary key]
+  created_at timestamp
+  material_name text
+  notes text [note: 'material notes']
+  material_author integer [ref: > users.auth_user_id]
+  ordered boolean
+  ordered_on date 
+}
+Table clients {
+  id integer [primary key]
+  created_at timestamp
+  client_name varchar
+  address varchar
+  postcode varchar
+  notes text [note: 'client notes']
+  project_id integer [ref: > projects.id]
+}
+Table project_materials {
+  project_id integer [ref: > projects.id]
+  material_id integer [ref: > materials.id]
+  quantity integer
+  notes varchar
+  primary key (project_id, material_id) 
+}
