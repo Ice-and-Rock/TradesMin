@@ -14,7 +14,7 @@ const ProjectMaterialsList = ({ projectId }) => {
     error,
   } = useFetchProjectMaterialsData( projectId ) ;
 
-  console.log("ProjectMaterialsList data:", fetchedProjectMaterials);
+  // console.log("ProjectMaterialsList data:", fetchedProjectMaterials);
 
   const handleShowModal = (material) => {
     setSelectedMaterial(material);

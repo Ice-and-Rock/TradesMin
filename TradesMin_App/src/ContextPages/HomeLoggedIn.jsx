@@ -1,27 +1,47 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import { useAuth } from "../Context/AuthProvider";
-import UserLastLogin from "./LoginComponents/UserLastLogin"
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import UserLastLogin from "./LoginComponents/UserLastLogin";
 
 const HomeLoggedIn = () => {
-  const { user } = useAuth();
-  console.log("Home Logged in. Check ✅")
-  
+  console.log("Home Logged in. Check ✅");
+
+  const { user, signOut } = useAuth();
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    console.log("logout running");
+    try {
+      const { error } = await signOut();
+
+      console.log(error);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
-  <Card className="m-4">
-    <Card.Body>
-    Welcome to V2 of TradesMin {user.email}!
-    </Card.Body>
-    <Card.Body>
-    You are LOGGED IN and you were last here on:
-    </Card.Body>
-    <Card.Body>
-    <UserLastLogin lastSignIn={user.last_sign_in_at} /> 
-    </Card.Body>
-  </Card>
-  
-)
+    <Container>
+      <Card className="m-4">
+        <Card.Header>Welcome to V2 of TradesMin!</Card.Header>
+        <Card.Body>
+          <Card.Text>{user.email}</Card.Text>
+          <Card.Text>You are LOGGED IN and you were last here on:</Card.Text>
+          <Card.Text>
+            <UserLastLogin lastSignIn={user.last_sign_in_at} />
+          </Card.Text>
+          <div className="colored-box p-4 rounded text-center">
+            <Link to="/notfound">
+              <Button variant="warning" onClick={handleLogout}>
+                Not you? Click here
+              </Button>
+            </Link>
+          </div>
+        </Card.Body>
+      </Card>
+    </Container>
+  );
 };
 
 export default HomeLoggedIn;

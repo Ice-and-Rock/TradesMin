@@ -4,14 +4,9 @@ import { Modal } from "react-bootstrap";
 
 
 const MaterialsDetailsModal = ({ show, onHide, materialData }) => {
-//     const {
-//         data: fetchedMaterial,
-//         // isPending,
-//         // error,
-//       } = useFetchMaterialData(materialId);
 
-//       console.log("MaterialDetail data:", fetchedMaterial)
-console.log("Modal Running ✅", materialData)
+// console.log("MaterialDetail data:", fetchedMaterial)
+// console.log("Modal Running ✅", materialData)
 
 return (
   <div>
@@ -24,7 +19,7 @@ return (
       <Modal.Body>
         
         <h5>{materialData?.notes}</h5>
-      {/* More infooo */}
+      {/* More infooo. Not needed ? */}
       </Modal.Body>
     </Modal>
   </div>
