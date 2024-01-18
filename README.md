@@ -18,6 +18,9 @@ Nick
 - Using dummy data files for Development
     - using JSON server to write the data and test GET POST requests etc...
 - React Bootstrap limitations
+- Passing data between components, checking for objects / arrays [{ data }]
+    logginmg results and makinjg swure data can be rendered in front end smoothly
+
 
 
 
