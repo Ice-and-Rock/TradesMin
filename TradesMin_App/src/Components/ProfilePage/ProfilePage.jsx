@@ -1,6 +1,6 @@
 import { Container, Card } from "react-bootstrap";
-import { useAuth } from "../Context/AuthProvider";
-import UserPage from "../Components/ProfilePage/UserPage.jsx";
+import { useAuth } from "../../Context/AuthProvider";
+import UserPage from "./UserPage.jsx";
 
 const ProfilePage = () => {
   const { user } = useAuth();
@@ -17,14 +17,12 @@ const ProfilePage = () => {
       <Card>
         <Card.Header>ProfilePage Component</Card.Header>
         <Card.Body>
-          <Card.Text>
-            <div>Auth profile:</div>
-            <p> {user.email}</p>
-            <div>Status:</div>
-            <p>
-              {user.aud} {renderStatusEmoji()}
-            </p>
-          </Card.Text>
+          <div>Auth profile:</div>
+          <p> {user.email}</p>
+          <div>Status:</div>
+          <p>
+            {user.aud} {renderStatusEmoji()}
+          </p>
         </Card.Body>
       </Card>
       <Card>

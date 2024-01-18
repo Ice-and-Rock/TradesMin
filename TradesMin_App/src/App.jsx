@@ -19,7 +19,7 @@ import ContextNavBar from "./ContextComponents/ContextNavbar";
 import PromptLogin from "./ContextPages/PromptLogin";
 import HomeTemp from "./ContextPages/HomeLoggedOut";
 import AboutMe from "./Components/AboutMe";
-import ProfilePage from "./ContextPages/ProfilePage";
+import ProfilePage from "./Components/ProfilePage/ProfilePage";
 import CompanyPage from "./Components/CompanyPage/CompanyPage";
 
 const App = () => {
