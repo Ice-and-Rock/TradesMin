@@ -16,8 +16,8 @@ const UserLastLogin = ({ lastSignIn }) => {
         style={{ backgroundColor: "#a0d3e8" }}
       >
        
-        <p className="mb-0">{formattedDate}</p>
-        <p>At: {formattedTime}</p>
+        <div className="mb-0">{formattedDate}</div>
+        <div>At: {formattedTime}</div>
       </div>
     </div>
   );

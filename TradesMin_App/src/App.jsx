@@ -31,16 +31,6 @@ const App = () => {
         <div className="flex-grow bg-blue-200">
           <ContextNavBar />
           <Routes>
-            {/* AuthProvider Routes */}
-            <Route element={<AuthRoute />}>
-              <Route path="/homeloggedin" element={<HomeLoggedIn />} />
-              <Route path="/projectspage" element={<ProjectsPage />} />
-              <Route path="/createproject" element={<CreateProject />} />
-              <Route path="editproject/:id" element={<EditProject />} />
-              <Route path="/projects/:id" element={<ProjectDetails />} />
-              <Route path="/profile" element={<ProfilePage />} />
-              <Route path="/company" element={<CompanyPage />} />
-            </Route>
             {/* Non-Authorised Routes */}
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -51,6 +41,17 @@ const App = () => {
             <Route path="/promptlogin" element={<PromptLogin />} />
 
             <Route path="/notfound" element={<NotFound />} />
+           
+            {/* AuthProvider Routes */}
+            <Route element={<AuthRoute />}>
+              <Route path="/homeloggedin" element={<HomeLoggedIn />} />
+              <Route path="/projectspage" element={<ProjectsPage />} />
+              <Route path="/createproject" element={<CreateProject />} />
+              <Route path="editproject/:id" element={<EditProject />} />
+              <Route path="/projects/:id" element={<ProjectDetails />} />
+              <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/company" element={<CompanyPage />} />
+            </Route>
           </Routes>
         </div>
         <Footer />

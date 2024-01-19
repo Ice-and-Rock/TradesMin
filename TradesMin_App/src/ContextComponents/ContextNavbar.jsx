@@ -21,7 +21,7 @@ const ContextNavBar = () => {
     }
   };
 
-  console.log("Navbar Auth Test:", auth); 
+  // console.log("Navbar Auth Test:", auth); 
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">

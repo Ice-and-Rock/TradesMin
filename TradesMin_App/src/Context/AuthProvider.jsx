@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [auth, setAuth] = useState(false);
 
-  console.log("AuthProvider running")
+  // console.log("AuthProvider running")
 
   useEffect(() => {
     const { data } = supabase.auth.onAuthStateChange(async (event, session) => {
@@ -33,10 +33,10 @@ const AuthProvider = ({ children }) => {
 
   // Check if there is a user + print email
   console.log("AuthProvider auth State:", auth)
-  if (user) {
-    console.log("User:", user.email,
-    "User status:", user.role )
-  }
+  // if (user) {
+  //   console.log("User:", user.email,
+  //   "User status:", user.role )
+  // }
 
   return (
     <AuthContext.Provider value={{ auth, user, login, signOut }}>

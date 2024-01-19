@@ -10,16 +10,16 @@ const UserData = ({ fetchedUser }) => {
     <Card>
       <Card.Header>UserData Component:</Card.Header>
       <Card.Body>
-        <Card.Text>
+        
           <div>Username:</div>
-          <p className="font-bold">{fetchedUser[0].username}</p>
+          <Card.Text className="font-bold">{fetchedUser[0].username}</Card.Text>
           <div>Role:</div>
-          <p className="font-bold">{fetchedUser[0].role}</p>
+          <Card.Text className="font-bold">{fetchedUser[0].role}</Card.Text>
           <div>(Code) Number</div>
-          <p className="font-bold">
+          <Card.Text className="font-bold">
             {fetchedUser[0].country_code} . {fetchedUser[0].phone_number}
-          </p>
-        </Card.Text>
+          </Card.Text>
+        
       </Card.Body>
     </Card>
   );

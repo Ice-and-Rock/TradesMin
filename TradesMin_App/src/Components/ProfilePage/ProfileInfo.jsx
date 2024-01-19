@@ -2,7 +2,7 @@
 import useFetchUserData from "../../hooks/useFetchUserData.js";
 import UserData from "./UserData.jsx";
 
-const UserPage = ({ userId }) => {
+const ProfileInfo = ({ userId }) => {
   const { userData: fetchedUser, isPending, error } = useFetchUserData(userId);
   // console.log("fetchedUser OBJECT:", fetchedUser);
   // console.log("UserData PROPS:", userId);
@@ -29,4 +29,4 @@ const UserPage = ({ userId }) => {
   );
 };
 
-export default UserPage;
+export default ProfileInfo;

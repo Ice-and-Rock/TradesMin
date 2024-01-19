@@ -28,9 +28,9 @@ const HomeLoggedIn = () => {
         <Card.Body>
           <Card.Text>{user.email}</Card.Text>
           <Card.Text>You are LOGGED IN and you were last here on:</Card.Text>
-          <Card.Text>
-            <UserLastLogin lastSignIn={user.last_sign_in_at} />
-          </Card.Text>
+        </Card.Body>
+        <Card.Body>
+          <UserLastLogin lastSignIn={user.last_sign_in_at} />
           <div className="colored-box p-4 rounded text-center">
             <Link to="/notfound">
               <Button variant="warning" onClick={handleLogout}>

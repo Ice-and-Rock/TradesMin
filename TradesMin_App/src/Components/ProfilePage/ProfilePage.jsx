@@ -1,6 +1,7 @@
 import { Container, Card } from "react-bootstrap";
 import { useAuth } from "../../Context/AuthProvider";
-import UserPage from "./UserPage.jsx";
+import ProfileInfo from "./ProfileInfo.jsx";
+
 
 const ProfilePage = () => {
   const { user } = useAuth();
@@ -27,7 +28,7 @@ const ProfilePage = () => {
       </Card>
       <Card>
         <Card.Body>
-          <UserPage userId={user.id} />
+          <ProfileInfo userId={user.id} />
         </Card.Body>
       </Card>
     </Container>
