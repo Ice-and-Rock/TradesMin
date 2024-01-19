@@ -1,5 +1,5 @@
 // import { Button } from "react-bootstrap";
-// line above removed from the Nav.Link button for logout 'as={button}' 
+// line above removed from the Nav.Link button for logout 'as={button}'
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -22,39 +22,37 @@ const ContextNavBar = () => {
     }
   };
 
-
-
-  // console.log("Navbar Auth Test:", auth); 
+  // console.log("Navbar Auth Test:", auth);
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand>TradesMin</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" style={{ visibility: "visible" }}>
-          <Nav className="md-auto" >
-          
-
-          {/* LOGGED OUT FROM HERE */}
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+          style={{ visibility: "visible" }}
+        >
+          <Nav className="md-auto">
+            {/* LOGGED OUT FROM HERE */}
             {!auth && (
               <div>
+                <Nav.Link as={Link} to="/hometemp">
+                  Home
+                </Nav.Link>
 
-              <Nav.Link as={Link} to="/hometemp">
-                Home
-              </Nav.Link>
-           
-              <Nav.Link  as={Link} to="/login">
-                Login
-              </Nav.Link>
-            
-              <Nav.Link as={Link} to="/register">
-                Register
-              </Nav.Link>
+                <Nav.Link as={Link} to="/login">
+                  Login
+                </Nav.Link>
+
+                <Nav.Link as={Link} to="/register">
+                  Register
+                </Nav.Link>
               </div>
             )}
-            
+
             {/* LOGGED IN FROM HERE */}
-            
+
             {auth && (
               <Nav.Link as={Link} to="/homeloggedin">
                 Dashboard
@@ -78,14 +76,13 @@ const ContextNavBar = () => {
             <Nav.Link as={Link} to="/about">
               About
             </Nav.Link>
-         
+
             {auth && (
               <Nav.Link onClick={handleLogout} href="/login">
                 LogOut
               </Nav.Link>
             )}
           </Nav>
-          
         </Navbar.Collapse>
       </Container>
     </Navbar>
