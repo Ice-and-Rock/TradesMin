@@ -51,9 +51,7 @@ export const About = () => {
         </Card.Body>
 
         <Card.Body>
-          <Card.Link>
-            <Link to="/aboutme">About the Author</Link>
-          </Card.Link>
+          <Card.Link href="/aboutme">About the Author</Card.Link>
         </Card.Body>
 
         <Card.Body>
