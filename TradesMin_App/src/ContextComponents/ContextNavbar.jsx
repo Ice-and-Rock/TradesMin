@@ -1,5 +1,6 @@
 // import { Button } from "react-bootstrap";
 // line above removed from the Nav.Link button for logout 'as={button}' 
+
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -21,6 +22,8 @@ const ContextNavBar = () => {
     }
   };
 
+
+
   // console.log("Navbar Auth Test:", auth); 
 
   return (
@@ -29,26 +32,29 @@ const ContextNavBar = () => {
         <Navbar.Brand>TradesMin</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" style={{ visibility: "visible" }}>
-          <Nav className="md-auto">
+          <Nav className="md-auto" >
+          
 
           {/* LOGGED OUT FROM HERE */}
             {!auth && (
+              <div>
+
               <Nav.Link as={Link} to="/hometemp">
                 Home
               </Nav.Link>
-            )}
-            {!auth && (
-              <Nav.Link as={Link} to="/login">
+           
+              <Nav.Link  as={Link} to="/login">
                 Login
               </Nav.Link>
-            )}
-            {!auth && (
+            
               <Nav.Link as={Link} to="/register">
                 Register
               </Nav.Link>
+              </div>
             )}
             
             {/* LOGGED IN FROM HERE */}
+            
             {auth && (
               <Nav.Link as={Link} to="/homeloggedin">
                 Dashboard
@@ -72,14 +78,14 @@ const ContextNavBar = () => {
             <Nav.Link as={Link} to="/about">
               About
             </Nav.Link>
-          </Nav>
-          <Nav>
+         
             {auth && (
-              <Nav.Link  onClick={handleLogout} href="/login">
+              <Nav.Link onClick={handleLogout} href="/login">
                 LogOut
               </Nav.Link>
             )}
           </Nav>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>
