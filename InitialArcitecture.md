@@ -17,4 +17,6 @@ includes the fetch requests from the React components in the front end
 Includes the different components of the front end to render the data fetched in the app
 - examples include ```inventoryList.tsx``` and ```userList.tsx``` 
 
-
+UPDATE - 5/3/24
+- Look into the note keeping systems recently discussed at work.
+    - Needs to be cross-platform with iOS and Android ⚡️
