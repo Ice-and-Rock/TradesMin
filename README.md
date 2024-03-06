@@ -5,6 +5,8 @@ I origionally intended to have an Object-orientated programming approach, but I 
 
 Every decision tha I make, I always try to zoom out and consider the architecture and design of what I'm building. So, although I made a switch this time - I've still had plenty of eureka moments! 
 
+Several deverolopment branches now exist in this project, each of which is a milestone for the developemnt stages. New updates will be pushed to <code>main</code> when objectives and tests have been met.
+
 Nick
 
 ## To start...
