@@ -11,14 +11,6 @@ Several deverolopment branches now exist in this project, each of which is a mil
 
 Nick
 
-## To start...
-Click this link for the demo:
-<code>https://trades-min.netlify.app/</code>
-
-Test email:
-<code>tradesmin.sample@gmail.com </code>
-test password:
-<code>TradesMin_Sample1</code>
 
 ## To start...
 Click this link for the demo:
