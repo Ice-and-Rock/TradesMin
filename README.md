@@ -3,9 +3,20 @@ An app commissioned for an Electrical Engineering Company based between France a
 
 I origionally intended to have an Object-orientated programming approach, but I had to switch early on due to lack of practice in linking the Front-end to the Back-end. After reading about it, I've gone with a functional approach, whcih is to say the software is structured in a series of linear functions determined by the function calls.
 
-Every decision tha I make, I always try to zoom out and consider the architecture and design of what I'm building. so, although I made a switch this time - I've still had plenty of eureka moments! 
+Every decision tha I make, I always try to zoom out and consider the architecture and design of what I'm building. So, although I made a switch this time - I've still had plenty of eureka moments! 
+
+Several deverolopment branches now exist in this project, each of which is a milestone for the developemnt stages. New updates will be pushed to <code>main</code> when objectives and tests have been met.
 
 Nick
+
+## To start...
+Click this link for the demo:
+<code>https://trades-min.netlify.app/</code>
+
+Test email:
+<code>tradesmin.sample@gmail.com </code>
+test password:
+<code>TradesMin_Sample1</code>
 
 
 ### ...Follow on articles that can be written from this work:
@@ -17,7 +28,10 @@ Nick
     - Great way to save time and money while using a database provided by a third party
 - Using dummy data files for Development
     - using JSON server to write the data and test GET POST requests etc...
-- 
+- React Bootstrap limitations
+- Passing data between components, checking for objects / arrays [{ data }]
+    logginmg results and makinjg swure data can be rendered in front end smoothly
+
 
 
 
