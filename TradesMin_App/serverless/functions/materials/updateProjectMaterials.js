@@ -1,6 +1,12 @@
 // Example of updating an entry in project_materials
 import { supabase } from "../../../src/ContextSupabase/Client.jsx";
 
+
+//  notes
+// the materials table and Project_materials tables should be seperated!! 
+// - one is a simply list of materials 
+// - the other sotred the numbers and quantities for each project 
+
 const updateProjectMaterial = async (req, res) => {
   try {
     const {
@@ -14,7 +20,7 @@ const updateProjectMaterial = async (req, res) => {
     } = req.body;
 
     const { data, error } = await supabase
-      .from("materials")
+      .from("project_materials")
       .update({
         material_name,
         notes,
