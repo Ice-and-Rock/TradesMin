@@ -2,12 +2,12 @@ import { supabase } from "../../../src/ContextSupabase/Client.jsx";
 
 const createClient = async (req, res) => {
   try {
-    const { clientName, address, postcode, notes, projectId } = req.body;
+    const { clientName, address, postcode, notes } = req.body;
 
     // Create client in the database
     const { data, error } = await supabase
       .from('clients')
-      .insert([{ client_name: clientName, address, postcode, notes, project_id: projectId }]);
+      .insert([{ client_name: clientName, address, postcode, notes }]);
 
     if (error) {
       throw error;

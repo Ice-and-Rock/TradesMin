@@ -2,11 +2,11 @@ import { supabase } from "../../../src/ContextSupabase/Client.jsx";
 
 const createCompany = async (req, res) => {
   try {
-    const { name, address, industry } = req.body;
+    const { company_name, address, postcode, phone_number } = req.body;
 
     const { data, error } = await supabase
       .from('companies')
-      .insert([{ company_name, address, postcode, phone_number }]); // this is not correct
+      .insert([{ company_name, address, postcode, phone_number }]); 
 
     if (error) {
       throw error;

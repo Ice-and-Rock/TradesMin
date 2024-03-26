@@ -2,11 +2,11 @@ import { supabase } from "../../../src/ContextSupabase/Client.jsx";
 
 const updateCompany = async (req, res) => {
   try {
-    const { id, company_name, address, postcode, phone_number } = req.body;
+    const { id, client_name, address, postcode, phone_number, notes, project_id } = req.body;
 
     const { data, error } = await supabase
-      .from('companies')
-      .update({ company_name, address, postcode, phone_number })
+      .from('clients')
+      .update({ client_name, address, postcode, phone_number, notes, project_id })
       .match({ id });
 
     if (error) {

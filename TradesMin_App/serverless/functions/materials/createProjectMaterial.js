@@ -1,13 +1,13 @@
 import { supabase } from "../../../src/ContextSupabase/Client.jsx";
 
-const createMaterial = async (req, res) => {
+const createProjectMaterial = async (req, res) => {
   try {
-    const { materialName, notes, createdBy, ordered, orderedOn } = req.body;
+    const { materialName, notes, createdBy, ordered, orderedOn, quantity } = req.body;
 
     // Create material in the database
     const { data, error } = await supabase
       .from('materials')
-      .insert([{ material_name: materialName, notes, created_by: createdBy, ordered, ordered_on: orderedOn }]);
+      .insert([{ material_name: materialName, notes, material_author: createdBy, ordered, ordered_on: orderedOn, quantity }]);
 
     if (error) {
       throw error;
@@ -21,4 +21,4 @@ const createMaterial = async (req, res) => {
   }
 };
 
-module.exports = createMaterial;
+module.exports = createProjectMaterial;
